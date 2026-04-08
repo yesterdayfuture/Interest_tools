@@ -1,0 +1,75 @@
+# ============================================
+# Python 项目 .gitignore 文件
+# ============================================
+
+# === Python ===
+# 字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 分发/打包
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv/
+
+# === IDE ===
+# PyCharm / IntelliJ
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# === 环境配置 ===
+# 环境变量文件（包含敏感信息）
+.env
+.env.local
+.env.*.local
+
+# === 数据库 ===
+# SQLite 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# === 日志 ===
+*.log
+logs/
+log/
+
+# === 测试 ===
+# 测试覆盖率报告
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.pytest_cache/
+
+# === 其他 ===
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# === 项目特定 ===
+# 任务调度中心特定文件
+tasks.db
+*.db-journal

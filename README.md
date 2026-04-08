@@ -9,8 +9,12 @@
 | 项目名称 | 技术栈 | 功能描述 |
 |:---------|:-------|:---------|
 | [ChatRoom](./ChatRoom) | FastAPI + Vue 3 + WebSocket | 实时聊天室应用，支持私聊、群聊、好友系统和群组邀请 |
+| [dispatch_center_asyncio](./dispatch_center_asyncio) | FastAPI + SQLAlchemy + asyncio | 基于 asyncio.Semaphore 的任务调度中心 |
+| [dispatch_center_process](./dispatch_center_process) | FastAPI + SQLAlchemy + multiprocessing | 基于多进程的任务调度中心 |
+| [dispatch_center_thteading](./dispatch_center_thteading) | FastAPI + SQLAlchemy + ThreadPoolExecutor | 基于线程池的任务调度中心 |
 | [testRuntimeRegister](./testRuntimeRegister) | Python + FastAPI + importlib | 运行时动态加载模块，不重启服务即可使用新文件中的函数 |
 | [use_importlib_module](./use_importlib_module) | Python + importlib | 学习动态导入模块的各种方法 |
+| [user_decide_tools_use](./user_decide_tools_use) | FastAPI + OpenAI + WebSocket | AI Agent 系统，支持用户确认机制（Human-in-the-Loop） |
 | [user_join_running_task](./user_join_running_task) | Python + threading + asyncio | 运行过程中的线程和协程，实现中间人工参与 |
 
 ---
@@ -93,7 +97,148 @@ npm run dev
 
 ---
 
-### 2. testRuntimeRegister - 运行时动态模块加载
+### 2. dispatch_center_asyncio - 异步任务调度中心
+
+**项目路径**: [./dispatch_center_asyncio](./dispatch_center_asyncio)
+
+#### 技术栈
+- **FastAPI** - Web 框架
+- **SQLAlchemy 2.0** - ORM（异步支持）
+- **SQLite** - 数据库
+- **asyncio.Semaphore** - 并发控制
+- **Pydantic** - 数据验证
+- **Uvicorn** - ASGI 服务器
+
+#### 功能特性
+- 基于 `asyncio.Semaphore` 实现并发控制
+- 任务生命周期管理（pending → running → completed/failed/cancelled）
+- 数据持久化存储
+- 多维度过滤和分页查询
+- 实时任务统计和成功率计算
+- RESTful API 接口
+- 支持自定义任务处理器
+
+#### 项目结构
+
+```
+dispatch_center_asyncio/
+├── app/
+│   ├── api/v1/            # API 层
+│   ├── core/              # 核心配置
+│   ├── db/                # 数据库层
+│   ├── models/            # 数据模型
+│   ├── schemas/           # 数据验证
+│   ├── services/          # 业务逻辑
+│   └── main.py            # 应用入口
+├── requirements.txt
+└── start.py
+```
+
+#### 快速开始
+
+```bash
+cd dispatch_center_asyncio
+pip install -r requirements.txt
+python start.py
+```
+
+---
+
+### 3. dispatch_center_process - 多进程任务调度中心
+
+**项目路径**: [./dispatch_center_process](./dispatch_center_process)
+
+#### 技术栈
+- **FastAPI** - Web 框架
+- **SQLAlchemy 2.0** - ORM（异步支持）
+- **SQLite** - 数据库
+- **multiprocessing** - 多进程并发
+- **Pydantic** - 数据验证
+- **Uvicorn** - ASGI 服务器
+
+#### 功能特性
+- 基于 Python `multiprocessing` 多进程实现并发控制
+- 利用多核 CPU 资源，适合 CPU 密集型任务
+- 任务生命周期管理
+- 数据持久化存储
+- 实时任务统计
+- RESTful API 接口
+
+#### 项目结构
+
+```
+dispatch_center_process/
+├── app/
+│   ├── api/v1/            # API 层
+│   ├── core/              # 核心配置
+│   ├── db/                # 数据库层
+│   ├── models/            # 数据模型
+│   ├── schemas/           # 数据验证
+│   ├── services/          # 业务逻辑
+│   └── main.py            # 应用入口
+├── requirements.txt
+└── start.py
+```
+
+#### 快速开始
+
+```bash
+cd dispatch_center_process
+pip install -r requirements.txt
+cp .env.example .env
+python start.py
+```
+
+---
+
+### 4. dispatch_center_thteading - 线程池任务调度中心
+
+**项目路径**: [./dispatch_center_thteading](./dispatch_center_thteading)
+
+#### 技术栈
+- **FastAPI** - Web 框架
+- **SQLAlchemy 2.0** - ORM（异步支持）
+- **SQLite** - 数据库
+- **ThreadPoolExecutor** - 线程池并发
+- **Pydantic** - 数据验证
+- **Uvicorn** - ASGI 服务器
+
+#### 功能特性
+- 基于 `ThreadPoolExecutor` 线程池实现并发控制
+- 适合 I/O 密集型任务
+- 任务生命周期管理
+- 数据持久化存储
+- 实时任务统计
+- RESTful API 接口
+
+#### 项目结构
+
+```
+dispatch_center_thteading/
+├── app/
+│   ├── api/v1/            # API 层
+│   ├── core/              # 核心配置
+│   ├── db/                # 数据库层
+│   ├── models/            # 数据模型
+│   ├── schemas/           # 数据验证
+│   ├── services/          # 业务逻辑
+│   └── main.py            # 应用入口
+├── requirements.txt
+└── start.py
+```
+
+#### 快速开始
+
+```bash
+cd dispatch_center_thteading
+pip install -r requirements.txt
+cp .env.example .env
+python start.py
+```
+
+---
+
+### 5. testRuntimeRegister - 运行时动态模块加载
 
 **项目路径**: [./testRuntimeRegister](./testRuntimeRegister)
 
@@ -139,7 +284,7 @@ python main.py
 
 ---
 
-### 3. use_importlib_module - 动态导入模块学习
+### 6. use_importlib_module - 动态导入模块学习
 
 **项目路径**: [./use_importlib_module](./use_importlib_module)
 
@@ -172,7 +317,74 @@ python 02_from_filepath_load_module.py
 
 ---
 
-### 4. user_join_running_task - 人工介入运行中的任务
+### 7. user_decide_tools_use - AI Agent 用户确认系统
+
+**项目路径**: [./user_decide_tools_use](./user_decide_tools_use)
+
+#### 技术栈
+- **FastAPI** - Web 框架
+- **OpenAI** - AI 模型接口
+- **SQLite** - 数据库
+- **WebSocket** - 实时通信
+- **JWT** - 用户认证
+- **Pydantic** - 数据验证
+
+#### 功能特性
+- **用户认证系统**：基于 JWT Token 的用户认证，支持注册、登录、登出
+- **AI Agent 任务管理**：异步任务执行，支持多任务并行和任务隔离
+- **Human-in-the-Loop**：敏感操作（文件创建、修改、删除等）需要用户确认
+- **WebSocket 实时通知**：任务状态实时推送到前端
+- **数据持久化**：SQLite 数据库存储用户和任务信息
+- **任务隔离**：不同任务之间完全隔离，互不影响
+
+#### 项目结构
+
+```
+user_decide_tools_use/
+├── app/
+│   ├── core/              # 核心配置
+│   │   ├── config.py      # 配置管理
+│   │   ├── database.py    # 数据库操作
+│   │   └── security.py    # 安全工具
+│   ├── models/            # 数据模型
+│   │   ├── schemas.py     # Pydantic 模型
+│   │   └── user.py        # 用户模型
+│   ├── routers/           # API 路由
+│   │   ├── auth.py        # 认证路由
+│   │   ├── tasks.py       # 任务路由
+│   │   └── pages.py       # 页面路由
+│   ├── services/          # 业务逻辑
+│   │   ├── task_manager.py # 任务管理器
+│   │   └── service.py     # OpenAI 代理服务
+│   └── templates/         # HTML 模板
+│       └── index.html     # 前端页面
+├── main.py                # 应用入口
+└── .env.example           # 环境变量示例
+```
+
+#### API 接口
+
+- `POST /auth/register` - 用户注册
+- `POST /auth/login` - 用户登录
+- `POST /auth/logout` - 用户登出
+- `POST /task/start` - 创建任务
+- `POST /task/{task_id}/confirm` - 确认任务操作
+- `GET /task/{task_id}/pending-interactions` - 获取待确认操作
+- `WebSocket /ws/task/{task_id}` - 任务状态实时推送
+
+#### 快速开始
+
+```bash
+cd user_decide_tools_use
+pip install fastapi uvicorn python-jose python-dotenv openai aiohttp
+cp .env.example .env
+# 编辑 .env 文件，配置 OPENAI_API_KEY
+python main.py
+```
+
+---
+
+### 8. user_join_running_task - 人工介入运行中的任务
 
 **项目路径**: [./user_join_running_task](./user_join_running_task)
 

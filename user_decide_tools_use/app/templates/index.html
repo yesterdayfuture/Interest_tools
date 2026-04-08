@@ -1,0 +1,1225 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 控制台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #45a049;
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #da190b;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .task-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .task-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .task-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .task-item.pending { border-left-color: #ffc107; }
+        .task-item.running { border-left-color: #2196f3; }
+        .task-item.waiting { border-left-color: #ff9800; }
+        .task-item.completed { border-left-color: #4caf50; }
+        .task-item.failed { border-left-color: #f44336; }
+        .task-item.cancelled { border-left-color: #9e9e9e; }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .task-id {
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .task-status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .task-status.pending { background: #fff3cd; color: #856404; }
+        .task-status.running { background: #cce5ff; color: #004085; }
+        .task-status.waiting { background: #ffe0b2; color: #e65100; }
+        .task-status.completed { background: #d4edda; color: #155724; }
+        .task-status.failed { background: #f8d7da; color: #721c24; }
+        .task-status.cancelled { background: #e2e3e5; color: #383d41; }
+
+        .task-message {
+            color: #666;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .confirmation-dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .confirmation-dialog.active {
+            display: flex;
+        }
+
+        .confirmation-content {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .confirmation-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        .confirmation-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-details pre {
+            background: #e9ecef;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+
+        .confirmation-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .log-container {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 4px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .log-time {
+            color: #6c757d;
+            font-size: 11px;
+        }
+
+        .log-type {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .log-type.status_update { color: #4fc1ff; }
+        .log-type.confirmation_required { color: #ffcc00; }
+        .log-type.confirmation_response { color: #4caf50; }
+        .log-type.tool_executed { color: #9cdcfe; }
+        .log-type.error { color: #f48771; }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .badge-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .notification-area {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .notification {
+            background: white;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            animation: slideInRight 0.3s ease;
+            max-width: 350px;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .notification-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .notification-message {
+            color: #666;
+            font-size: 13px;
+        }
+        .auth-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .auth-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            border-bottom-color: #667eea;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .user-info span {
+            font-weight: 500;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 登录/注册界面 -->
+    <div id="authSection" class="auth-container">
+        <h2>🤖 AI Agent 控制台</h2>
+        <div class="auth-tabs">
+            <div class="auth-tab active" onclick="switchAuthTab('login')">登录</div>
+            <div class="auth-tab" onclick="switchAuthTab('register')">注册</div>
+        </div>
+
+        <!-- 登录表单 -->
+        <div id="loginForm" class="auth-form active">
+            <div class="input-group">
+                <label for="loginUsername">用户名</label>
+                <input type="text" id="loginUsername" placeholder="请输入用户名">
+            </div>
+            <div class="input-group">
+                <label for="loginPassword">密码</label>
+                <input type="password" id="loginPassword" placeholder="请输入密码">
+            </div>
+            <button class="btn btn-primary" onclick="login()" style="width: 100%;">登录</button>
+        </div>
+
+        <!-- 注册表单 -->
+        <div id="registerForm" class="auth-form">
+            <div class="input-group">
+                <label for="registerUsername">用户名</label>
+                <input type="text" id="registerUsername" placeholder="3-20个字符">
+            </div>
+            <div class="input-group">
+                <label for="registerPassword">密码</label>
+                <input type="password" id="registerPassword" placeholder="至少6个字符">
+            </div>
+            <button class="btn btn-primary" onclick="register()" style="width: 100%;">注册</button>
+        </div>
+    </div>
+
+    <!-- 主应用界面 -->
+    <div id="appSection" class="container hidden">
+        <div class="user-info">
+            <span>👤 <span id="currentUsername"></span></span>
+            <button class="btn btn-secondary" onclick="logout()" style="padding: 6px 12px; font-size: 12px;">退出登录</button>
+        </div>
+
+        <h1>🤖 AI Agent 控制台</h1>
+
+        <div class="grid">
+            <div class="card">
+                <h2>🚀 启动新任务</h2>
+                <div class="input-group">
+                    <label for="userMessage">输入消息</label>
+                    <textarea id="userMessage" placeholder="例如：创建一个名为 hello.txt 的文件，内容是 Hello World"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="startTask()">启动任务</button>
+            </div>
+
+            <div class="card">
+                <h2>📋 任务列表</h2>
+                <div class="task-list" id="taskList">
+                    <div class="empty-state">暂无任务</div>
+                </div>
+                <button class="btn btn-secondary" onclick="refreshTasks()">刷新列表</button>
+            </div>
+        </div>
+
+        <div class="grid" style="margin-top: 20px;">
+            <div class="card">
+                <h2>📡 实时日志 <span class="badge badge-danger" id="connectionStatus">未连接</span></h2>
+                <div class="log-container" id="logContainer">
+                    <div class="log-entry">等待连接...</div>
+                </div>
+                <button class="btn btn-secondary" onclick="clearLogs()">清空日志</button>
+            </div>
+
+            <div class="card">
+                <h2>ℹ️ 使用说明</h2>
+                <div style="color: #666; line-height: 1.8;">
+                    <p><strong>支持的文件操作：</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 16px;">
+                        <li>创建文件 (create_file)</li>
+                        <li>修改文件 (modify_file)</li>
+                        <li>删除文件 (delete_file)</li>
+                        <li>读取文件 (read_file)</li>
+                        <li>移动/复制文件 (move_file/copy_file)</li>
+                        <li>列出目录 (list_directory)</li>
+                        <li>执行命令 (run_command)</li>
+                    </ul>
+                    <p><strong>⚠️ 注意：</strong>敏感操作需要用户确认</p>
+                    <p><strong>🔒 任务隔离：</strong>不同任务之间完全隔离，互不影响</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 确认对话框 -->
+    <div class="confirmation-dialog" id="confirmationDialog">
+        <div class="confirmation-content">
+            <h3 class="confirmation-title">⚠️ 需要确认</h3>
+            <div class="confirmation-details">
+                <p><strong>操作：</strong><span id="confirmToolName"></span></p>
+                <p><strong>任务ID：</strong><span id="confirmTaskId"></span></p>
+                <p style="margin-top: 12px;"><strong>参数：</strong></p>
+                <pre id="confirmToolArgs"></pre>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn btn-danger" onclick="rejectConfirmation()">拒绝</button>
+                <button class="btn btn-success" onclick="approveConfirmation()">同意</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知区域 -->
+    <div class="notification-area" id="notificationArea"></div>
+
+    <script>
+        // 全局状态
+        const state = {
+            tasks: {},
+            websockets: {},
+            currentConfirmation: null,
+            logs: [],
+            token: localStorage.getItem('token'),
+            username: localStorage.getItem('username')
+        };
+
+        // 全局轮询定时器
+        let refreshInterval = null;
+
+        // 页面加载时检查登录状态
+        window.onload = function() {
+            if (state.token && state.username) {
+                showApp();
+                startTaskPolling();
+            }
+        };
+
+        // 启动任务列表轮询
+        function startTaskPolling() {
+            // 先刷新一次
+            refreshTasks();
+            // 启动定时轮询（每5秒）
+            if (!refreshInterval) {
+                refreshInterval = setInterval(refreshTasks, 5000);
+            }
+        }
+
+        // 停止任务列表轮询
+        function stopTaskPolling() {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+                refreshInterval = null;
+            }
+        }
+
+        // 切换登录/注册标签
+        function switchAuthTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+
+            if (tab === 'login') {
+                document.querySelector('.auth-tab:nth-child(1)').classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else {
+                document.querySelector('.auth-tab:nth-child(2)').classList.add('active');
+                document.getElementById('registerForm').classList.add('active');
+            }
+        }
+
+        // 登录
+        async function login() {
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!username || !password) {
+                alert('请输入用户名和密码');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    state.token = data.access_token;
+                    state.username = data.username;
+                    localStorage.setItem('token', data.access_token);
+                    localStorage.setItem('username', data.username);
+                    showApp();
+                    startTaskPolling();  // 登录成功后启动轮询
+                } else {
+                    alert(data.detail || '登录失败');
+                }
+            } catch (error) {
+                alert('登录请求失败: ' + (error.message || '网络错误'));
+            }
+        }
+
+        // 注册
+        async function register() {
+            const username = document.getElementById('registerUsername').value.trim();
+            const password = document.getElementById('registerPassword').value;
+
+            if (!username || !password) {
+                alert('请输入用户名和密码');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('注册成功，请登录');
+                    switchAuthTab('login');
+                    document.getElementById('loginUsername').value = username;
+                } else {
+                    alert(data.detail || '注册失败');
+                }
+            } catch (error) {
+                alert('注册请求失败: ' + (error.message || '网络错误'));
+            }
+        }
+
+        // 退出登录
+        function logout() {
+            // 停止任务列表轮询
+            stopTaskPolling();
+
+            // 断开所有 WebSocket
+            Object.keys(state.websockets).forEach(taskId => {
+                const ws = state.websockets[taskId];
+                if (ws) ws.close();
+            });
+            state.websockets = {};
+
+            // 清除状态
+            state.token = null;
+            state.username = null;
+            state.tasks = {};
+            state.logs = [];
+
+            // 清除本地存储
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+
+            // 显示登录界面
+            showAuth();
+        }
+
+        // 显示应用界面
+        function showApp() {
+            document.getElementById('authSection').classList.add('hidden');
+            document.getElementById('appSection').classList.remove('hidden');
+            document.getElementById('currentUsername').textContent = state.username;
+            addLog('status_update', `用户 ${state.username} 已登录`);
+        }
+
+        // 显示登录界面
+        function showAuth() {
+            document.getElementById('authSection').classList.remove('hidden');
+            document.getElementById('appSection').classList.add('hidden');
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('registerUsername').value = '';
+            document.getElementById('registerPassword').value = '';
+        }
+
+        // 获取请求头
+        function getAuthHeaders() {
+            return {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${state.token}`
+            };
+        }
+
+        // 安全获取字符串前N个字符
+        function safeSubstring(str, length) {
+            if (!str || typeof str !== 'string') return 'unknown';
+            return str.substring(0, length);
+        }
+
+        // 添加日志
+        function addLog(type, message, data = null) {
+            const time = new Date().toLocaleTimeString();
+            const logEntry = { time, type, message, data };
+            state.logs.push(logEntry);
+
+            const container = document.getElementById('logContainer');
+            if (!container) return;
+
+            const entryDiv = document.createElement('div');
+            entryDiv.className = 'log-entry';
+            entryDiv.innerHTML = `
+                <span class="log-time">[${time}]</span>
+                <span class="log-type ${type}">${type}</span>
+                <span>${message}</span>
+            `;
+            container.appendChild(entryDiv);
+            container.scrollTop = container.scrollHeight;
+
+            // 限制日志数量
+            while (state.logs.length > 100 && container.firstChild) {
+                state.logs.shift();
+                container.removeChild(container.firstChild);
+            }
+        }
+
+        // 清空日志
+        function clearLogs() {
+            state.logs = [];
+            const container = document.getElementById('logContainer');
+            if (container) container.innerHTML = '';
+        }
+
+        // 显示通知
+        function showNotification(title, message, duration = 5000) {
+            const area = document.getElementById('notificationArea');
+            if (!area) return;
+
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div class="notification-title">${title || '通知'}</div>
+                <div class="notification-message">${message || ''}</div>
+            `;
+            area.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100px)';
+                setTimeout(() => notification.remove(), 300);
+            }, duration);
+        }
+
+        // 启动任务
+        async function startTask() {
+            const messageInput = document.getElementById('userMessage');
+            if (!messageInput) return;
+
+            const message = messageInput.value.trim();
+            if (!message) {
+                alert('请输入消息');
+                return;
+            }
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10秒超时
+
+                const response = await fetch('/api/task/start', {
+                    method: 'POST',
+                    headers: getAuthHeaders(),
+                    body: JSON.stringify({ user_message: message }),
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                if (response.status === 401) {
+                    alert('登录已过期，请重新登录');
+                    logout();
+                    return;
+                }
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.detail || `HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (data.task_id) {
+                    addLog('status_update', `任务启动: ${data.task_id}`);
+                    showNotification('任务已启动', `任务ID: ${safeSubstring(data.task_id, 8)}...`);
+                    messageInput.value = '';
+
+                    // 连接 WebSocket
+                    connectWebSocket(data.task_id);
+
+                    // 刷新任务列表
+                    refreshTasks();
+                } else {
+                    addLog('error', `启动失败: 服务器返回无效数据`);
+                }
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    addLog('error', '启动失败: 请求超时，服务器响应时间过长');
+                } else if (error.message && error.message.includes('Failed to fetch')) {
+                    addLog('error', '启动失败: 无法连接到服务器，请检查：1.服务是否运行 2.网络连接');
+                } else {
+                    addLog('error', `启动失败: ${error && error.message ? error.message : '网络错误'}`);
+                }
+            }
+        }
+
+        // 获取 WebSocket 协议
+        function getWebSocketProtocol() {
+            return window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        }
+
+        // 连接 WebSocket
+        function connectWebSocket(taskId) {
+            if (!taskId || state.websockets[taskId]) {
+                return; // 已连接或无效taskId
+            }
+
+            try {
+                const protocol = getWebSocketProtocol();
+                const ws = new WebSocket(`${protocol}//${window.location.host}/ws/${taskId}`);
+
+                ws.onopen = () => {
+                    addLog('status_update', `WebSocket 连接成功: ${safeSubstring(taskId, 8)}...`);
+                    updateConnectionStatus();
+                };
+
+                ws.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        handleWebSocketMessage(taskId, data);
+                    } catch (e) {
+                        addLog('error', `消息解析失败: ${e.message}`);
+                    }
+                };
+
+                ws.onclose = () => {
+                    addLog('status_update', `WebSocket 断开: ${safeSubstring(taskId, 8)}...`);
+                    delete state.websockets[taskId];
+                    updateConnectionStatus();
+                };
+
+                ws.onerror = (error) => {
+                    // 忽略浏览器扩展导致的错误
+                    addLog('error', `WebSocket 错误: ${safeSubstring(taskId, 8)}...`);
+                };
+
+                state.websockets[taskId] = ws;
+            } catch (e) {
+                addLog('error', `WebSocket 连接失败: ${e && e.message ? e.message : '未知错误'}`);
+            }
+        }
+
+        // 处理 WebSocket 消息
+        function handleWebSocketMessage(taskId, message) {
+            if (!message || !message.type) return;
+
+            const { type, data } = message;
+            const taskShortId = safeSubstring(taskId, 8);
+
+            switch (type) {
+                case 'status_update':
+                    addLog('status_update', `状态更新 [${taskShortId}]: ${data && data.status ? data.status : 'unknown'}`);
+                    if (data) {
+                        updateTaskInList(data);
+                        // 如果任务状态为 WAITING 且没有显示确认对话框，主动查询
+                        if (data.status === 'waiting' && !state.currentConfirmation) {
+                            checkPendingInteraction(taskId);
+                        }
+                    }
+                    break;
+
+                case 'confirmation_required':
+                    if (data && data.tool_name) {
+                        addLog('confirmation_required', `需要确认 [${taskShortId}]: ${data.tool_name}`);
+                        showConfirmationDialog(data);
+                        showNotification('需要确认', `任务 ${taskShortId}... 需要执行 ${data.tool_name}`);
+                    }
+                    break;
+
+                case 'confirmation_response':
+                    addLog('confirmation_response', `确认响应 [${taskShortId}]: ${data && data.approved ? '同意' : '拒绝'}`);
+                    closeConfirmationDialog();
+                    break;
+
+                case 'tool_executed':
+                    addLog('tool_executed', `工具执行 [${taskShortId}]: ${data && data.tool ? data.tool : 'unknown'}`);
+                    break;
+
+                case 'task_cancelled':
+                    addLog('status_update', `任务取消 [${taskShortId}]`);
+                    break;
+
+                default:
+                    addLog('status_update', `未知消息类型 [${taskShortId}]: ${type}`);
+            }
+
+            refreshTasks();
+        }
+
+        // 主动查询待确认的交互（作为 WebSocket 的备用）
+        async function checkPendingInteraction(taskId) {
+            console.log('checkPendingInteraction called for task:', taskId);
+
+            if (!taskId || state.currentConfirmation) {
+                console.log('Skipping check: no taskId or dialog already shown');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/task/${taskId}/pending`);
+                console.log('Pending check response status:', response.status);
+
+                if (!response.ok) return;
+
+                const data = await response.json();
+                console.log('Pending check data:', data);
+
+                if (data.has_pending && data.interaction_id) {
+                    addLog('confirmation_required', `查询到待确认操作 [${safeSubstring(taskId, 8)}]: ${data.tool_name}`);
+                    showConfirmationDialog({
+                        interaction_id: data.interaction_id,
+                        tool_name: data.tool_name,
+                        tool_args: data.tool_args,
+                        prompt: data.prompt,
+                        task_id: taskId
+                    });
+                    showNotification('需要确认', `任务 ${safeSubstring(taskId, 8)}... 需要执行 ${data.tool_name}`);
+                } else {
+                    console.log('No pending interaction found');
+                }
+            } catch (error) {
+                // 静默失败，不影响用户体验
+                console.log('查询待确认交互失败:', error);
+            }
+        }
+
+        // 从任务列表点击同意
+        async function checkAndConfirmTask(taskId) {
+            console.log('checkAndConfirmTask called for:', taskId);
+            try {
+                const response = await fetch(`/api/task/${taskId}/pending`, {
+                    headers: { 'Authorization': `Bearer ${state.token}` }
+                });
+
+                if (response.status === 401) {
+                    alert('登录已过期，请重新登录');
+                    logout();
+                    return;
+                }
+
+                if (!response.ok) {
+                    addLog('error', '获取待确认信息失败');
+                    return;
+                }
+
+                const data = await response.json();
+                if (data.has_pending && data.interaction_id) {
+                    await sendConfirmation(taskId, data.interaction_id, true);
+                } else {
+                    addLog('error', '该任务没有待确认的操作');
+                    refreshTasks();
+                }
+            } catch (error) {
+                addLog('error', `确认失败: ${error && error.message ? error.message : '网络错误'}`);
+            }
+        }
+
+        // 从任务列表点击拒绝
+        async function checkAndRejectTask(taskId) {
+            console.log('checkAndRejectTask called for:', taskId);
+            try {
+                const response = await fetch(`/api/task/${taskId}/pending`, {
+                    headers: { 'Authorization': `Bearer ${state.token}` }
+                });
+
+                if (response.status === 401) {
+                    alert('登录已过期，请重新登录');
+                    logout();
+                    return;
+                }
+
+                if (!response.ok) {
+                    addLog('error', '获取待确认信息失败');
+                    return;
+                }
+
+                const data = await response.json();
+                if (data.has_pending && data.interaction_id) {
+                    await sendConfirmation(taskId, data.interaction_id, false);
+                } else {
+                    addLog('error', '该任务没有待确认的操作');
+                    refreshTasks();
+                }
+            } catch (error) {
+                addLog('error', `拒绝失败: ${error && error.message ? error.message : '网络错误'}`);
+            }
+        }
+
+        // 更新连接状态
+        function updateConnectionStatus() {
+            const count = Object.keys(state.websockets).length;
+            const badge = document.getElementById('connectionStatus');
+            if (count > 0) {
+                badge.textContent = `${count} 个连接`;
+                badge.className = 'badge';
+                badge.style.background = '#4caf50';
+                badge.style.color = 'white';
+            } else {
+                badge.textContent = '未连接';
+                badge.className = 'badge badge-danger';
+            }
+        }
+
+        // 显示确认对话框
+        function showConfirmationDialog(data) {
+            console.log('showConfirmationDialog called with:', data);
+
+            if (!data || !data.interaction_id) {
+                console.error('Invalid data for confirmation dialog:', data);
+                return;
+            }
+
+            // 检查 DOM 元素是否存在
+            const dialog = document.getElementById('confirmationDialog');
+            const toolNameEl = document.getElementById('confirmToolName');
+            const taskIdEl = document.getElementById('confirmTaskId');
+            const toolArgsEl = document.getElementById('confirmToolArgs');
+
+            if (!dialog || !toolNameEl || !taskIdEl || !toolArgsEl) {
+                console.error('Confirmation dialog elements not found');
+                return;
+            }
+
+            state.currentConfirmation = data;
+            toolNameEl.textContent = data.tool_name || '未知操作';
+            taskIdEl.textContent = data.task_id || '未知任务';
+            toolArgsEl.textContent = JSON.stringify(data.tool_args || {}, null, 2);
+            dialog.classList.add('active');
+
+            console.log('Confirmation dialog shown successfully');
+        }
+
+        // 关闭确认对话框
+        function closeConfirmationDialog() {
+            document.getElementById('confirmationDialog').classList.remove('active');
+            state.currentConfirmation = null;
+        }
+
+        // 同意确认
+        async function approveConfirmation() {
+            if (!state.currentConfirmation) return;
+
+            const { task_id, interaction_id } = state.currentConfirmation;
+            await sendConfirmation(task_id, interaction_id, true);
+        }
+
+        // 拒绝确认
+        async function rejectConfirmation() {
+            if (!state.currentConfirmation) return;
+
+            const { task_id, interaction_id } = state.currentConfirmation;
+            await sendConfirmation(task_id, interaction_id, false);
+        }
+
+        // 发送确认
+        async function sendConfirmation(taskId, interactionId, approved) {
+            if (!taskId || !interactionId) {
+                addLog('error', '确认失败: 缺少任务ID或交互ID');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/task/confirm`, {
+                    method: 'POST',
+                    headers: getAuthHeaders(),
+                    body: JSON.stringify({
+                        interaction_id: interactionId,
+                        approved: approved,
+                        user_input: null
+                    })
+                });
+
+                if (response.status === 401) {
+                    alert('登录已过期，请重新登录');
+                    logout();
+                    return;
+                }
+
+                const data = await response.json();
+                if (response.ok) {
+                    addLog('confirmation_response', `已${approved ? '同意' : '拒绝'}操作`);
+                    closeConfirmationDialog();
+                } else {
+                    addLog('error', `确认失败: ${data && data.detail ? data.detail : '未知错误'}`);
+                }
+            } catch (error) {
+                addLog('error', `确认请求失败: ${error && error.message ? error.message : '网络错误'}`);
+            }
+        }
+
+        // 刷新任务列表
+        async function refreshTasks() {
+            // 如果未登录，不发送请求
+            if (!state.token) {
+                return;
+            }
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000); // 5秒超时
+
+                const response = await fetch('/api/tasks', {
+                    headers: { 'Authorization': `Bearer ${state.token}` },
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                if (response.status === 401) {
+                    // 停止轮询，避免重复提示
+                    stopTaskPolling();
+                    alert('登录已过期，请重新登录');
+                    logout();
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                const container = document.getElementById('taskList');
+                if (!container) return;
+
+                if (!data.tasks || data.tasks.length === 0) {
+                    container.innerHTML = '<div class="empty-state">暂无任务</div>';
+                    return;
+                }
+
+                container.innerHTML = data.tasks.map(task => {
+                    const isWaiting = task.status === 'waiting';
+                    const hasPending = !!task.pending_interaction_id;
+
+                    return `
+                    <div class="task-item ${task.status || 'unknown'}" data-task-id="${task.id}">
+                        <div class="task-header">
+                            <span class="task-id">${safeSubstring(task.id, 16)}...</span>
+                            <span class="task-status ${task.status || 'unknown'}">${task.status || 'unknown'}</span>
+                        </div>
+                        <div class="task-message">
+                            ${hasPending ? '⏳ 等待用户确认' : ''}
+                        </div>
+                        ${isWaiting && hasPending ? `
+                        <div class="task-actions" style="margin-top: 12px; display: flex; gap: 8px;">
+                            <button class="btn btn-success" onclick="checkAndConfirmTask('${task.id}')" style="padding: 6px 12px; font-size: 12px;">
+                                ✓ 同意
+                            </button>
+                            <button class="btn btn-danger" onclick="checkAndRejectTask('${task.id}')" style="padding: 6px 12px; font-size: 12px;">
+                                ✗ 拒绝
+                            </button>
+                        </div>
+                        ` : ''}
+                    </div>
+                `}).join('');
+
+                // 为活跃任务连接 WebSocket（排除已完成、失败、取消的任务）
+                const terminalStatuses = ['completed', 'failed', 'cancelled'];
+                data.tasks.forEach(task => {
+                    if (task.id && !state.websockets[task.id] && !terminalStatuses.includes(task.status)) {
+                        connectWebSocket(task.id);
+                    }
+                });
+
+                // 检查是否有等待中的任务需要显示确认对话框
+                data.tasks.forEach(task => {
+                    if (task.status === 'waiting' && task.pending_interaction_id && !state.currentConfirmation) {
+                        checkPendingInteraction(task.id);
+                    }
+                });
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    addLog('error', '刷新任务列表失败: 请求超时');
+                } else if (error.message && error.message.includes('Failed to fetch')) {
+                    addLog('error', '刷新任务列表失败: 无法连接到服务器，请检查服务是否运行');
+                } else {
+                    addLog('error', `刷新任务列表失败: ${error && error.message ? error.message : '网络错误'}`);
+                }
+            }
+        }
+
+        // 更新任务在列表中
+        function updateTaskInList(taskData) {
+            // 任务列表会自动刷新，这里可以添加额外的逻辑
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 如果已登录，启动任务轮询
+            if (state.token && state.username) {
+                startTaskPolling();
+            }
+        });
+    </script>
+</body>
+</html>
+    
