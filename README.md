@@ -12,6 +12,8 @@
 | [dispatch_center_asyncio](./dispatch_center_asyncio) | FastAPI + SQLAlchemy + asyncio | 基于 asyncio.Semaphore 的任务调度中心 |
 | [dispatch_center_process](./dispatch_center_process) | FastAPI + SQLAlchemy + multiprocessing | 基于多进程的任务调度中心 |
 | [dispatch_center_thteading](./dispatch_center_thteading) | FastAPI + SQLAlchemy + ThreadPoolExecutor | 基于线程池的任务调度中心 |
+| [fastapi_SseAndStreamable](./fastapi_SseAndStreamable) | FastAPI + SSE + Streamable HTTP | SSE 和 Streamable HTTP 流式传输对比测试 |
+| [simulation_claude_code_skill](./simulation_claude_code_skill) | FastAPI + OpenAI | Claude Code Skills 系统模拟实现 |
 | [testRuntimeRegister](./testRuntimeRegister) | Python + FastAPI + importlib | 运行时动态加载模块，不重启服务即可使用新文件中的函数 |
 | [use_importlib_module](./use_importlib_module) | Python + importlib | 学习动态导入模块的各种方法 |
 | [user_decide_tools_use](./user_decide_tools_use) | FastAPI + OpenAI + WebSocket | AI Agent 系统，支持用户确认机制（Human-in-the-Loop） |
@@ -118,22 +120,6 @@ npm run dev
 - RESTful API 接口
 - 支持自定义任务处理器
 
-#### 项目结构
-
-```
-dispatch_center_asyncio/
-├── app/
-│   ├── api/v1/            # API 层
-│   ├── core/              # 核心配置
-│   ├── db/                # 数据库层
-│   ├── models/            # 数据模型
-│   ├── schemas/           # 数据验证
-│   ├── services/          # 业务逻辑
-│   └── main.py            # 应用入口
-├── requirements.txt
-└── start.py
-```
-
 #### 快速开始
 
 ```bash
@@ -163,22 +149,6 @@ python start.py
 - 数据持久化存储
 - 实时任务统计
 - RESTful API 接口
-
-#### 项目结构
-
-```
-dispatch_center_process/
-├── app/
-│   ├── api/v1/            # API 层
-│   ├── core/              # 核心配置
-│   ├── db/                # 数据库层
-│   ├── models/            # 数据模型
-│   ├── schemas/           # 数据验证
-│   ├── services/          # 业务逻辑
-│   └── main.py            # 应用入口
-├── requirements.txt
-└── start.py
-```
 
 #### 快速开始
 
@@ -211,22 +181,6 @@ python start.py
 - 实时任务统计
 - RESTful API 接口
 
-#### 项目结构
-
-```
-dispatch_center_thteading/
-├── app/
-│   ├── api/v1/            # API 层
-│   ├── core/              # 核心配置
-│   ├── db/                # 数据库层
-│   ├── models/            # 数据模型
-│   ├── schemas/           # 数据验证
-│   ├── services/          # 业务逻辑
-│   └── main.py            # 应用入口
-├── requirements.txt
-└── start.py
-```
-
 #### 快速开始
 
 ```bash
@@ -238,7 +192,117 @@ python start.py
 
 ---
 
-### 5. testRuntimeRegister - 运行时动态模块加载
+### 5. fastapi_SseAndStreamable - SSE 和 Streamable HTTP 对比测试
+
+**项目路径**: [./fastapi_SseAndStreamable](./fastapi_SseAndStreamable)
+
+#### 技术栈
+- **FastAPI** - Web 框架
+- **sse-starlette** - SSE 实现库
+- **Streamable HTTP** - 通用流式传输机制
+
+#### 功能特性
+对比测试 SSE 和 Streamable HTTP 两种流式传输技术：
+
+**SSE (Server-Sent Events)**:
+- 基于 HTTP 的特定协议，HTML5 标准的一部分
+- 单向通信：数据从服务器流向客户端
+- 固定格式：`text/event-stream`，数据行以 `data:` 开头
+- 有状态连接：需要维护持久 HTTP 长连接
+
+**Streamable HTTP**:
+- 通用传输机制，灵活选择流式响应
+- 请求-响应式，可升级为流式响应
+- 使用 `Transfer-Encoding: chunked` 分块传输，格式自定义
+- 无状态连接，支持从断开点续传
+
+#### 项目结构
+
+```
+fastapi_SseAndStreamable/
+├── sse_mode_test/         # SSE 模式测试
+│   └── main.py
+├── streamable_mode_test/  # Streamable HTTP 模式测试
+│   └── main.py
+└── readme.md
+```
+
+#### 快速开始
+
+```bash
+cd fastapi_SseAndStreamable
+pip install sse-starlette
+
+# 测试 SSE 模式
+cd sse_mode_test
+uvicorn main:app --reload --port 8001
+
+# 测试 Streamable HTTP 模式
+cd ../streamable_mode_test
+uvicorn main:app --reload --port 8002
+```
+
+---
+
+### 6. simulation_claude_code_skill - Claude Code Skills 模拟实现
+
+**项目路径**: [./simulation_claude_code_skill](./simulation_claude_code_skill)
+
+#### 技术栈
+- **FastAPI** - Web 框架
+- **OpenAI** - AI 模型接口
+- **Pydantic** - 数据验证
+- **python-dotenv** - 环境变量管理
+
+#### 功能特性
+- **技能管理**：基于文件系统的动态技能发现和管理
+- **意图识别**：智能匹配用户请求与相关技能
+- **渐进式披露**：按需加载技能内容，最小化 Token 消耗
+- **安全沙盒**：隔离执行技能脚本，确保安全性
+- **API 接口**：完整的 RESTful API 接口
+
+#### 项目结构
+
+```
+simulation_claude_code_skill/
+├── skills/                 # 技能目录
+│   ├── code-reviewer/      # 代码审查技能
+│   ├── fitness-plan-generator/  # 健身计划生成器
+│   ├── learning-schedule-generator/  # 学习计划生成器
+│   ├── project-health/     # 项目健康分析技能
+│   ├── random-password-generator/  # 随机密码生成器
+│   ├── skill-creator/      # 技能创建器
+│   └── test-skill/         # 测试技能
+├── src/                    # 源代码
+│   ├── skill_parser.py     # 技能配置解析
+│   ├── skill_manager.py    # 技能管理
+│   ├── intent_matcher.py   # 意图匹配
+│   ├── progressive_disclosure.py  # 渐进式披露
+│   └── sandbox.py          # 安全沙盒
+├── main.py                 # FastAPI 应用入口
+└── requirements.txt        # 依赖文件
+```
+
+#### API 接口
+
+- `GET /skills` - 获取技能列表
+- `GET /skills/{skill_id}` - 获取技能详情
+- `POST /skills/{skill_id}/trigger` - 触发技能执行
+- `POST /intent/match` - 意图匹配
+- `GET /health` - 健康检查
+
+#### 快速开始
+
+```bash
+cd simulation_claude_code_skill
+pip install -r requirements.txt
+# 配置 .env 文件中的 OPENAI_API_KEY
+uvicorn main:app --reload
+```
+
+---
+
+### 7. testRuntimeRegister - 运行时动态模块加载
 
 **项目路径**: [./testRuntimeRegister](./testRuntimeRegister)
 
@@ -254,19 +318,6 @@ python start.py
 - 支持同步和异步函数调用
 - 提供模块重新加载功能（热更新）
 - 路径白名单校验，确保安全性
-
-#### 项目结构
-
-```
-testRuntimeRegister/
-├── app/
-│   ├── __init__.py
-│   └── function_loader.py    # 动态加载器核心实现
-├── plugins/
-│   ├── __init__.py
-│   └── calculator.py         # 示例插件
-└── main.py                   # FastAPI 应用入口
-```
 
 #### API 接口
 
@@ -284,7 +335,7 @@ python main.py
 
 ---
 
-### 6. use_importlib_module - 动态导入模块学习
+### 8. use_importlib_module - 动态导入模块学习
 
 **项目路径**: [./use_importlib_module](./use_importlib_module)
 
@@ -304,8 +355,6 @@ python main.py
 - `01_load_module.py` - 导入同级模块和包内模块
 - `02_from_filepath_load_module.py` - 根据文件路径动态加载模块
 - `03_check_load_module.py` - 检查模块加载状态
-- `test_module.py` - 测试模块示例
-- `test_package/` - 测试包示例
 
 #### 快速开始
 
@@ -317,7 +366,7 @@ python 02_from_filepath_load_module.py
 
 ---
 
-### 7. user_decide_tools_use - AI Agent 用户确认系统
+### 9. user_decide_tools_use - AI Agent 用户确认系统
 
 **项目路径**: [./user_decide_tools_use](./user_decide_tools_use)
 
@@ -337,31 +386,6 @@ python 02_from_filepath_load_module.py
 - **数据持久化**：SQLite 数据库存储用户和任务信息
 - **任务隔离**：不同任务之间完全隔离，互不影响
 
-#### 项目结构
-
-```
-user_decide_tools_use/
-├── app/
-│   ├── core/              # 核心配置
-│   │   ├── config.py      # 配置管理
-│   │   ├── database.py    # 数据库操作
-│   │   └── security.py    # 安全工具
-│   ├── models/            # 数据模型
-│   │   ├── schemas.py     # Pydantic 模型
-│   │   └── user.py        # 用户模型
-│   ├── routers/           # API 路由
-│   │   ├── auth.py        # 认证路由
-│   │   ├── tasks.py       # 任务路由
-│   │   └── pages.py       # 页面路由
-│   ├── services/          # 业务逻辑
-│   │   ├── task_manager.py # 任务管理器
-│   │   └── service.py     # OpenAI 代理服务
-│   └── templates/         # HTML 模板
-│       └── index.html     # 前端页面
-├── main.py                # 应用入口
-└── .env.example           # 环境变量示例
-```
-
 #### API 接口
 
 - `POST /auth/register` - 用户注册
@@ -369,7 +393,6 @@ user_decide_tools_use/
 - `POST /auth/logout` - 用户登出
 - `POST /task/start` - 创建任务
 - `POST /task/{task_id}/confirm` - 确认任务操作
-- `GET /task/{task_id}/pending-interactions` - 获取待确认操作
 - `WebSocket /ws/task/{task_id}` - 任务状态实时推送
 
 #### 快速开始
@@ -384,7 +407,7 @@ python main.py
 
 ---
 
-### 8. user_join_running_task - 人工介入运行中的任务
+### 10. user_join_running_task - 人工介入运行中的任务
 
 **项目路径**: [./user_join_running_task](./user_join_running_task)
 
@@ -408,18 +431,6 @@ python main.py
 - 异步方式处理用户输入
 - 支持协程任务切换
 - 使用 `asyncio.Queue` 进行任务传递
-
-#### 项目结构
-
-```
-user_join_running_task/
-├── use_threading/
-│   ├── 01_user_interrupt_threading_event.py   # Event 方式
-│   └── 02_user_interrupt_threading_queue.py   # Queue 方式
-└── use_asyncio/
-    ├── 01_test_interrupt_asyncio_event.py     # Event 方式
-    └── 02_test_interrupt_asyncio_queue.py     # Queue 方式
-```
 
 #### 快速开始
 

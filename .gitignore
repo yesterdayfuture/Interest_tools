@@ -129,3 +129,6 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+
+# === 其他 ===
+**/.gitignore
