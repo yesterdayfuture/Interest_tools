@@ -1,0 +1,2554 @@
+{
+  "executions": [
+    {
+      "execution_id": "08ed2939-5e34-4c5a-a2d9-82859720a717",
+      "query": "什么是人工智能？",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:19:33.909563"
+        },
+        {
+          "step": 2,
+          "description": "chain:ChatPromptTemplate",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "你是一个 helpful 助手。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "system",
+                "name": null,
+                "id": null
+              },
+              {
+                "content": "什么是人工智能？",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": null
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:19:33.909839"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "content": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。它的核心目标是使机器能够执行通常需要人类智能才能完成的任务，例如学习、推理、感知、理解语言和解决问题。\n\n### 人工智能的主要领域包括：\n1. **机器学习**  \n   让计算机通过数据自动学习和改进，而无需显式编程。常见的应用有图像识别、语音识别和推荐系统。\n\n2. **自然语言处理**  \n   使计算机能够理解、解释和生成人类语言，例如聊天机器人、翻译工具和情感分析。\n\n3. **计算机视觉**  \n   让机器“看懂”图像和视频，应用于人脸识别、自动驾驶和医疗影像分析。\n\n4. **专家系统**  \n   模拟人类专家的决策能力，用于医疗诊断、金融分析等领域。\n\n5. **机器人技术**  \n   结合硬件和软件，使机器人能够感知环境并执行任务，如工业自动化、服务机器人。\n\n### 人工智能的分类：\n- **弱人工智能**：专注于特定任务（如 AlphaGo、Siri）。\n- **强人工智能**：理论上具备与人类相当的通用智能（目前尚未实现）。\n- **超级人工智能**：在几乎所有领域超越人类智能（属于未来设想）。\n\n### 应用场景：\n- **日常生活**：智能助手（如 Alexa）、个性化推荐（如 Netflix）。\n- **医疗**：疾病预测、药物研发。\n- **交通**：自动驾驶汽车、智能交通管理。\n- **金融**：欺诈检测、算法交易。\n\n### 挑战与争议：\n- **伦理问题**：隐私、算法偏见、责任归属。\n- **就业影响**：自动化可能取代部分人力工作。\n- **安全风险**：恶意使用 AI 技术（如深度伪造）。\n\n人工智能正在快速发展，未来可能进一步融入社会各领域，但同时也需要法规和伦理框架的引导，以确保其发展符合人类利益。",
+            "additional_kwargs": {
+              "refusal": null
+            },
+            "response_metadata": {
+              "token_usage": {
+                "completion_tokens": 398,
+                "prompt_tokens": 13,
+                "total_tokens": 411,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cached_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 13
+              },
+              "model_provider": "openai",
+              "model_name": "deepseek-chat",
+              "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+              "id": "a2bef307-cfcc-44c8-9b54-9e9b13bfb6cb",
+              "finish_reason": "stop",
+              "logprobs": null
+            },
+            "type": "ai",
+            "name": null,
+            "id": "lc_run--019d8c93-8f16-7a20-b815-a4bc0ac8d6c6-0",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 13,
+              "output_tokens": 398,
+              "total_tokens": 411,
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "output_token_details": {}
+            }
+          },
+          "output": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。它的核心目标是使机器能够执行通常需要人类智能才能完成的任务，例如学习、推理、感知、理解语言和解决问题。\n\n### 人工智能的主要领域包括：\n1. **机器学习**  \n   让计算机通过数据自动学习和改进，而无需显式编程。常见的应用有图像识别、语音识别和推荐系统。\n\n2. **自然语言处理**  \n   使计算机能够理解、解释和生成人类语言，例如聊天机器人、翻译工具和情感分析。\n\n3. **计算机视觉**  \n   让机器“看懂”图像和视频，应用于人脸识别、自动驾驶和医疗影像分析。\n\n4. **专家系统**  \n   模拟人类专家的决策能力，用于医疗诊断、金融分析等领域。\n\n5. **机器人技术**  \n   结合硬件和软件，使机器人能够感知环境并执行任务，如工业自动化、服务机器人。\n\n### 人工智能的分类：\n- **弱人工智能**：专注于特定任务（如 AlphaGo、Siri）。\n- **强人工智能**：理论上具备与人类相当的通用智能（目前尚未实现）。\n- **超级人工智能**：在几乎所有领域超越人类智能（属于未来设想）。\n\n### 应用场景：\n- **日常生活**：智能助手（如 Alexa）、个性化推荐（如 Netflix）。\n- **医疗**：疾病预测、药物研发。\n- **交通**：自动驾驶汽车、智能交通管理。\n- **金融**：欺诈检测、算法交易。\n\n### 挑战与争议：\n- **伦理问题**：隐私、算法偏见、责任归属。\n- **就业影响**：自动化可能取代部分人力工作。\n- **安全风险**：恶意使用 AI 技术（如深度伪造）。\n\n人工智能正在快速发展，未来可能进一步融入社会各领域，但同时也需要法规和伦理框架的引导，以确保其发展符合人类利益。",
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:19:51.788196"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 3,
+      "final_output": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。它的核心目标是使机器能够执行通常需要人类智能才能完成的任务，例如学习、推理、感知、理解语言和解决问题。\n\n### 人工智能的主要领域包括：\n1. **机器学习**  \n   让计算机通过数据自动学习和改进，而无需显式编程。常见的应用有图像识别、语音识别和推荐系统。\n\n2. **自然语言处理**  \n   使计算机能够理解、解释和生成人类语言，例如聊天机器人、翻译工具和情感分析。\n\n3. **计算机视觉**  \n   让机器“看懂”图像和视频，应用于人脸识别、自动驾驶和医疗影像分析。\n\n4. **专家系统**  \n   模拟人类专家的决策能力，用于医疗诊断、金融分析等领域。\n\n5. **机器人技术**  \n   结合硬件和软件，使机器人能够感知环境并执行任务，如工业自动化、服务机器人。\n\n### 人工智能的分类：\n- **弱人工智能**：专注于特定任务（如 AlphaGo、Siri）。\n- **强人工智能**：理论上具备与人类相当的通用智能（目前尚未实现）。\n- **超级人工智能**：在几乎所有领域超越人类智能（属于未来设想）。\n\n### 应用场景：\n- **日常生活**：智能助手（如 Alexa）、个性化推荐（如 Netflix）。\n- **医疗**：疾病预测、药物研发。\n- **交通**：自动驾驶汽车、智能交通管理。\n- **金融**：欺诈检测、算法交易。\n\n### 挑战与争议：\n- **伦理问题**：隐私、算法偏见、责任归属。\n- **就业影响**：自动化可能取代部分人力工作。\n- **安全风险**：恶意使用 AI 技术（如深度伪造）。\n\n人工智能正在快速发展，未来可能进一步融入社会各领域，但同时也需要法规和伦理框架的引导，以确保其发展符合人类利益。",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:19:33.909539",
+      "end_time": "2026-04-14T23:19:51.788721",
+      "created_at": "2026-04-14T23:19:33.909552",
+      "metadata": {
+        "version": "1.0",
+        "env": "demo",
+        "framework": "langchain",
+        "input": {
+          "question": "什么是人工智能？"
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 17876.736164093018,
+            "token_usage": {
+              "completion_tokens": 398,
+              "prompt_tokens": 13,
+              "total_tokens": 411,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+              },
+              "prompt_cache_hit_tokens": 0,
+              "prompt_cache_miss_tokens": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "a971a13d-f58d-4e3a-b2fc-52338cf34ff7",
+      "query": "什么是人工智能？",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:24:34.098131"
+        },
+        {
+          "step": 2,
+          "description": "chain:ChatPromptTemplate",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "你是一个 helpful 助手。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "system",
+                "name": null,
+                "id": null
+              },
+              {
+                "content": "什么是人工智能？",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": null
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:24:34.098407"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "content": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。它的核心目标是使机器能够执行通常需要人类智能才能完成的任务，例如学习、推理、感知、理解语言、解决问题和适应环境等。\n\n### 人工智能的主要领域包括：\n1. **机器学习**  \n   通过算法让计算机从数据中学习规律，并做出预测或决策，而无需显式编程。常见的应用有图像识别、语音识别和推荐系统。\n\n2. **深度学习**  \n   机器学习的一个子领域，基于神经网络模型，尤其擅长处理大规模复杂数据（如图像、语音和文本）。例如，ChatGPT 就是基于深度学习技术构建的。\n\n3. **自然语言处理**  \n   让计算机理解、生成和处理人类语言，应用于机器翻译、聊天机器人和情感分析等场景。\n\n4. **计算机视觉**  \n   使机器能够“看懂”图像或视频内容，用于人脸识别、自动驾驶和医学影像分析。\n\n5. **机器人技术**  \n   结合硬件与 AI 算法，让机器人感知环境并自主执行任务，如工业自动化或家庭服务机器人。\n\n### 人工智能的分类：\n- **弱人工智能**：专注于特定任务（如下棋、语音助手），不具备真正的意识或通用智能。\n- **强人工智能**：理论上能像人类一样全面思考、学习和解决任何问题，但目前尚未实现。\n- **通用人工智能**：具备人类水平的综合认知能力，是 AI 研究的长期目标。\n\n### 应用与影响：\n- **日常生活**：智能手机助手、导航系统、个性化推荐（如 Netflix 和淘宝）。\n- **产业变革**：医疗诊断辅助、金融风控、智能制造、农业自动化。\n- **社会挑战**：就业结构变化、隐私安全、算法偏见、伦理争议（如自动驾驶的责任归属）。\n\n### 发展现状与未来：\n当前 AI 技术仍处于“弱人工智能”阶段，但在大数据和算力提升的推动下进展迅速。未来，AI 可能与脑科学、量子计算等领域结合，向更通用、更自主的方向演进，同时也需要全球协作建立伦理与治理框架。\n\n如果你对某个具体领域（如 ChatGPT 的原理、AI 伦理或学习路径）感兴趣，我可以进一步展开说明！ 😊",
+            "additional_kwargs": {
+              "refusal": null
+            },
+            "response_metadata": {
+              "token_usage": {
+                "completion_tokens": 474,
+                "prompt_tokens": 13,
+                "total_tokens": 487,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cached_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 13
+              },
+              "model_provider": "openai",
+              "model_name": "deepseek-chat",
+              "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+              "id": "77107657-e807-4e26-a5af-33af0413be88",
+              "finish_reason": "stop",
+              "logprobs": null
+            },
+            "type": "ai",
+            "name": null,
+            "id": "lc_run--019d8c98-23b2-74e3-a5ac-82f9c6e6268b-0",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 13,
+              "output_tokens": 474,
+              "total_tokens": 487,
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "output_token_details": {}
+            }
+          },
+          "output": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。它的核心目标是使机器能够执行通常需要人类智能才能完成的任务，例如学习、推理、感知、理解语言、解决问题和适应环境等。\n\n### 人工智能的主要领域包括：\n1. **机器学习**  \n   通过算法让计算机从数据中学习规律，并做出预测或决策，而无需显式编程。常见的应用有图像识别、语音识别和推荐系统。\n\n2. **深度学习**  \n   机器学习的一个子领域，基于神经网络模型，尤其擅长处理大规模复杂数据（如图像、语音和文本）。例如，ChatGPT 就是基于深度学习技术构建的。\n\n3. **自然语言处理**  \n   让计算机理解、生成和处理人类语言，应用于机器翻译、聊天机器人和情感分析等场景。\n\n4. **计算机视觉**  \n   使机器能够“看懂”图像或视频内容，用于人脸识别、自动驾驶和医学影像分析。\n\n5. **机器人技术**  \n   结合硬件与 AI 算法，让机器人感知环境并自主执行任务，如工业自动化或家庭服务机器人。\n\n### 人工智能的分类：\n- **弱人工智能**：专注于特定任务（如下棋、语音助手），不具备真正的意识或通用智能。\n- **强人工智能**：理论上能像人类一样全面思考、学习和解决任何问题，但目前尚未实现。\n- **通用人工智能**：具备人类水平的综合认知能力，是 AI 研究的长期目标。\n\n### 应用与影响：\n- **日常生活**：智能手机助手、导航系统、个性化推荐（如 Netflix 和淘宝）。\n- **产业变革**：医疗诊断辅助、金融风控、智能制造、农业自动化。\n- **社会挑战**：就业结构变化、隐私安全、算法偏见、伦理争议（如自动驾驶的责任归属）。\n\n### 发展现状与未来：\n当前 AI 技术仍处于“弱人工智能”阶段，但在大数据和算力提升的推动下进展迅速。未来，AI 可能与脑科学、量子计算等领域结合，向更通用、更自主的方向演进，同时也需要全球协作建立伦理与治理框架。\n\n如果你对某个具体领域（如 ChatGPT 的原理、AI 伦理或学习路径）感兴趣，我可以进一步展开说明！ 😊",
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:24:51.053607"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 3,
+      "final_output": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。它的核心目标是使机器能够执行通常需要人类智能才能完成的任务，例如学习、推理、感知、理解语言、解决问题和适应环境等。\n\n### 人工智能的主要领域包括：\n1. **机器学习**  \n   通过算法让计算机从数据中学习规律，并做出预测或决策，而无需显式编程。常见的应用有图像识别、语音识别和推荐系统。\n\n2. **深度学习**  \n   机器学习的一个子领域，基于神经网络模型，尤其擅长处理大规模复杂数据（如图像、语音和文本）。例如，ChatGPT 就是基于深度学习技术构建的。\n\n3. **自然语言处理**  \n   让计算机理解、生成和处理人类语言，应用于机器翻译、聊天机器人和情感分析等场景。\n\n4. **计算机视觉**  \n   使机器能够“看懂”图像或视频内容，用于人脸识别、自动驾驶和医学影像分析。\n\n5. **机器人技术**  \n   结合硬件与 AI 算法，让机器人感知环境并自主执行任务，如工业自动化或家庭服务机器人。\n\n### 人工智能的分类：\n- **弱人工智能**：专注于特定任务（如下棋、语音助手），不具备真正的意识或通用智能。\n- **强人工智能**：理论上能像人类一样全面思考、学习和解决任何问题，但目前尚未实现。\n- **通用人工智能**：具备人类水平的综合认知能力，是 AI 研究的长期目标。\n\n### 应用与影响：\n- **日常生活**：智能手机助手、导航系统、个性化推荐（如 Netflix 和淘宝）。\n- **产业变革**：医疗诊断辅助、金融风控、智能制造、农业自动化。\n- **社会挑战**：就业结构变化、隐私安全、算法偏见、伦理争议（如自动驾驶的责任归属）。\n\n### 发展现状与未来：\n当前 AI 技术仍处于“弱人工智能”阶段，但在大数据和算力提升的推动下进展迅速。未来，AI 可能与脑科学、量子计算等领域结合，向更通用、更自主的方向演进，同时也需要全球协作建立伦理与治理框架。\n\n如果你对某个具体领域（如 ChatGPT 的原理、AI 伦理或学习路径）感兴趣，我可以进一步展开说明！ 😊",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:24:34.098109",
+      "end_time": "2026-04-14T23:24:51.054015",
+      "created_at": "2026-04-14T23:24:34.098122",
+      "metadata": {
+        "version": "1.0",
+        "env": "demo",
+        "framework": "langchain",
+        "input": {
+          "question": "什么是人工智能？"
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 16953.877925872803,
+            "token_usage": {
+              "completion_tokens": 474,
+              "prompt_tokens": 13,
+              "total_tokens": 487,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+              },
+              "prompt_cache_hit_tokens": 0,
+              "prompt_cache_miss_tokens": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "3b79734e-5908-4ec6-a455-44c660db488f",
+      "query": "什么是人工智能？",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:30:29.052673"
+        },
+        {
+          "step": 2,
+          "description": "chain:ChatPromptTemplate",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "你是一个 helpful 助手。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "system",
+                "name": null,
+                "id": null
+              },
+              {
+                "content": "什么是人工智能？",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": null
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:30:29.052887"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "content": "人工智能（Artificial Intelligence，简称 AI）是一门研究如何使计算机系统模拟、延伸和扩展人类智能的科学与技术。它旨在开发能够执行通常需要人类智能才能完成的任务的系统，例如：\n\n1. **学习与推理**  \n   通过算法从数据中学习规律（机器学习），并基于已有信息进行逻辑推断。\n\n2. **感知与交互**  \n   识别图像、语音、文本等（计算机视觉、自然语言处理），并与环境或人类互动。\n\n3. **问题解决与决策**  \n   在复杂环境中自主规划、优化决策（如自动驾驶、游戏AI）。\n\n---\n\n### **核心分支领域**\n- **机器学习**：让系统通过数据自动改进性能，无需显式编程。\n- **深度学习**：基于神经网络的机器学习方法，擅长处理图像、语音等非结构化数据。\n- **自然语言处理**：使计算机理解、生成人类语言（如聊天机器人、翻译）。\n- **机器人技术**：结合硬件与AI，实现物理世界的自主操作。\n\n---\n\n### **应用场景**\n- **日常生活**：语音助手（Siri、小爱同学）、推荐系统（抖音、淘宝）。\n- **专业领域**：医疗诊断辅助、金融风控、自动驾驶、科学研究（如蛋白质结构预测）。\n\n---\n\n### **发展现状与挑战**\n- **现状**：AI已在特定任务上超越人类（如图像识别），但通用人工智能（AGI，具备人类全面认知能力）尚未实现。\n- **挑战**：数据隐私、算法偏见、伦理风险（如就业冲击）、可解释性不足（“黑箱”问题）。\n\n---\n\n### **未来趋势**\n- **融合创新**：AI与物联网、区块链、生物技术结合。\n- **伦理规范**：各国推动AI治理框架，确保技术安全、公平、透明。\n- **通用人工智能探索**：长期目标为开发具备常识和跨领域推理能力的AI。\n\n人工智能正重塑社会生产与生活方式，但其发展需兼顾技术进步与人类价值观的平衡。如果有具体方向（如技术原理、伦理讨论或应用案例），可以进一步探讨！ 😊",
+            "additional_kwargs": {
+              "refusal": null
+            },
+            "response_metadata": {
+              "token_usage": {
+                "completion_tokens": 428,
+                "prompt_tokens": 13,
+                "total_tokens": 441,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cached_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 13
+              },
+              "model_provider": "openai",
+              "model_name": "deepseek-chat",
+              "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+              "id": "fb497d36-cad1-4766-830d-cf6e8cdc31a2",
+              "finish_reason": "stop",
+              "logprobs": null
+            },
+            "type": "ai",
+            "name": null,
+            "id": "lc_run--019d8c9d-8e3d-7191-b1ef-368ca237e099-0",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 13,
+              "output_tokens": 428,
+              "total_tokens": 441,
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "output_token_details": {}
+            }
+          },
+          "output": "人工智能（Artificial Intelligence，简称 AI）是一门研究如何使计算机系统模拟、延伸和扩展人类智能的科学与技术。它旨在开发能够执行通常需要人类智能才能完成的任务的系统，例如：\n\n1. **学习与推理**  \n   通过算法从数据中学习规律（机器学习），并基于已有信息进行逻辑推断。\n\n2. **感知与交互**  \n   识别图像、语音、文本等（计算机视觉、自然语言处理），并与环境或人类互动。\n\n3. **问题解决与决策**  \n   在复杂环境中自主规划、优化决策（如自动驾驶、游戏AI）。\n\n---\n\n### **核心分支领域**\n- **机器学习**：让系统通过数据自动改进性能，无需显式编程。\n- **深度学习**：基于神经网络的机器学习方法，擅长处理图像、语音等非结构化数据。\n- **自然语言处理**：使计算机理解、生成人类语言（如聊天机器人、翻译）。\n- **机器人技术**：结合硬件与AI，实现物理世界的自主操作。\n\n---\n\n### **应用场景**\n- **日常生活**：语音助手（Siri、小爱同学）、推荐系统（抖音、淘宝）。\n- **专业领域**：医疗诊断辅助、金融风控、自动驾驶、科学研究（如蛋白质结构预测）。\n\n---\n\n### **发展现状与挑战**\n- **现状**：AI已在特定任务上超越人类（如图像识别），但通用人工智能（AGI，具备人类全面认知能力）尚未实现。\n- **挑战**：数据隐私、算法偏见、伦理风险（如就业冲击）、可解释性不足（“黑箱”问题）。\n\n---\n\n### **未来趋势**\n- **融合创新**：AI与物联网、区块链、生物技术结合。\n- **伦理规范**：各国推动AI治理框架，确保技术安全、公平、透明。\n- **通用人工智能探索**：长期目标为开发具备常识和跨领域推理能力的AI。\n\n人工智能正重塑社会生产与生活方式，但其发展需兼顾技术进步与人类价值观的平衡。如果有具体方向（如技术原理、伦理讨论或应用案例），可以进一步探讨！ 😊",
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:30:45.368716"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 3,
+      "final_output": "人工智能（Artificial Intelligence，简称 AI）是一门研究如何使计算机系统模拟、延伸和扩展人类智能的科学与技术。它旨在开发能够执行通常需要人类智能才能完成的任务的系统，例如：\n\n1. **学习与推理**  \n   通过算法从数据中学习规律（机器学习），并基于已有信息进行逻辑推断。\n\n2. **感知与交互**  \n   识别图像、语音、文本等（计算机视觉、自然语言处理），并与环境或人类互动。\n\n3. **问题解决与决策**  \n   在复杂环境中自主规划、优化决策（如自动驾驶、游戏AI）。\n\n---\n\n### **核心分支领域**\n- **机器学习**：让系统通过数据自动改进性能，无需显式编程。\n- **深度学习**：基于神经网络的机器学习方法，擅长处理图像、语音等非结构化数据。\n- **自然语言处理**：使计算机理解、生成人类语言（如聊天机器人、翻译）。\n- **机器人技术**：结合硬件与AI，实现物理世界的自主操作。\n\n---\n\n### **应用场景**\n- **日常生活**：语音助手（Siri、小爱同学）、推荐系统（抖音、淘宝）。\n- **专业领域**：医疗诊断辅助、金融风控、自动驾驶、科学研究（如蛋白质结构预测）。\n\n---\n\n### **发展现状与挑战**\n- **现状**：AI已在特定任务上超越人类（如图像识别），但通用人工智能（AGI，具备人类全面认知能力）尚未实现。\n- **挑战**：数据隐私、算法偏见、伦理风险（如就业冲击）、可解释性不足（“黑箱”问题）。\n\n---\n\n### **未来趋势**\n- **融合创新**：AI与物联网、区块链、生物技术结合。\n- **伦理规范**：各国推动AI治理框架，确保技术安全、公平、透明。\n- **通用人工智能探索**：长期目标为开发具备常识和跨领域推理能力的AI。\n\n人工智能正重塑社会生产与生活方式，但其发展需兼顾技术进步与人类价值观的平衡。如果有具体方向（如技术原理、伦理讨论或应用案例），可以进一步探讨！ 😊",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:30:29.052653",
+      "end_time": "2026-04-14T23:30:45.369397",
+      "created_at": "2026-04-14T23:30:29.052664",
+      "metadata": {
+        "version": "1.0",
+        "env": "demo",
+        "framework": "langchain",
+        "input": {
+          "question": "什么是人工智能？"
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 16313.975095748901,
+            "token_usage": {
+              "completion_tokens": 428,
+              "prompt_tokens": 13,
+              "total_tokens": 441,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+              },
+              "prompt_cache_hit_tokens": 0,
+              "prompt_cache_miss_tokens": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "8d2af649-cf3e-42ae-990c-a92080db967b",
+      "query": "什么是人工智能？",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:35:12.900651"
+        },
+        {
+          "step": 2,
+          "description": "chain:ChatPromptTemplate",
+          "input": {
+            "question": "什么是人工智能？"
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "你是一个 helpful 助手。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "system",
+                "name": null,
+                "id": null
+              },
+              {
+                "content": "什么是人工智能？",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": null
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:35:12.900881"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "content": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。简单来说，人工智能是让机器具备类似人类的**学习、推理、感知、决策和创造**等能力的技术。\n\n---\n\n### **人工智能的核心特点**\n1. **学习能力**  \n   - 通过数据或经验自动改进性能（如机器学习、深度学习）。\n2. **推理与决策**  \n   - 处理复杂信息并做出逻辑判断（如自动驾驶、医疗诊断）。\n3. **感知与交互**  \n   - 识别图像、语音、文字等（如人脸识别、语音助手）。\n4. **自适应与创造**  \n   - 生成新内容（如AI绘画、写作）或适应环境变化。\n\n---\n\n### **人工智能的分支领域**\n- **机器学习（ML）**：让机器通过数据自我优化，无需显式编程。\n- **深度学习（DL）**：基于神经网络的机器学习，擅长处理图像、语音等复杂数据。\n- **自然语言处理（NLP）**：让机器理解、生成人类语言（如ChatGPT）。\n- **计算机视觉**：使机器“看懂”图像和视频（如人脸识别、无人驾驶）。\n- **机器人技术**：结合硬件与AI实现物理世界的交互（如工业机器人）。\n\n---\n\n### **人工智能的应用场景**\n- **日常生活**：智能音箱、推荐系统（如抖音、淘宝）、语音翻译。\n- **医疗健康**：辅助诊断、药物研发、健康监测。\n- **工业与交通**：智能制造、自动驾驶、物流优化。\n- **创意领域**：AI绘画、音乐生成、新闻写作。\n- **科学研究**：气候预测、蛋白质结构分析（如AlphaFold）。\n\n---\n\n### **人工智能的发展阶段**\n1. **弱人工智能（ANI）**  \n   - 专注于特定任务（如下棋、翻译），当前大多数AI属于此类。\n2. **强人工智能（AGI）**  \n   - 具备人类全面智能，可跨领域学习与决策（尚未实现）。\n3. **超级人工智能（ASI）**  \n   - 智能超越全人类的总和（属于理论设想）。\n\n---\n\n### **挑战与争议**\n- **伦理问题**：隐私泄露、算法偏见、责任归属。\n- **就业影响**：自动化取代部分人力工作。\n- **安全风险**：AI被滥用（如深度伪造、自主武器）。\n- **技术瓶颈**：数据依赖、能耗高、泛化能力有限。\n\n---\n\n### **未来趋势**\n- **通用人工智能（AGI）探索**：让AI具备更全面的认知能力。\n- **AI与人类协作**：增强人类能力，而非完全替代。\n- **可解释性AI**：提高AI决策的透明度和可信度。\n- **伦理与法规**：全球范围内推动AI治理（如欧盟《人工智能法案》）。\n\n---\n\n人工智能正在重塑社会，它既是工具也是挑战。理解其原理与应用，有助于我们更好地利用技术，同时应对其带来的变革与风险。",
+            "additional_kwargs": {
+              "refusal": null
+            },
+            "response_metadata": {
+              "token_usage": {
+                "completion_tokens": 629,
+                "prompt_tokens": 13,
+                "total_tokens": 642,
+                "completion_tokens_details": null,
+                "prompt_tokens_details": {
+                  "audio_tokens": null,
+                  "cached_tokens": 0
+                },
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 13
+              },
+              "model_provider": "openai",
+              "model_name": "deepseek-chat",
+              "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+              "id": "42d9b3d2-938c-4a86-88c0-2899dcd36631",
+              "finish_reason": "stop",
+              "logprobs": null
+            },
+            "type": "ai",
+            "name": null,
+            "id": "lc_run--019d8ca1-e305-7991-98bb-6e58b90d1ccd-0",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 13,
+              "output_tokens": 629,
+              "total_tokens": 642,
+              "input_token_details": {
+                "cache_read": 0
+              },
+              "output_token_details": {}
+            }
+          },
+          "output": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。简单来说，人工智能是让机器具备类似人类的**学习、推理、感知、决策和创造**等能力的技术。\n\n---\n\n### **人工智能的核心特点**\n1. **学习能力**  \n   - 通过数据或经验自动改进性能（如机器学习、深度学习）。\n2. **推理与决策**  \n   - 处理复杂信息并做出逻辑判断（如自动驾驶、医疗诊断）。\n3. **感知与交互**  \n   - 识别图像、语音、文字等（如人脸识别、语音助手）。\n4. **自适应与创造**  \n   - 生成新内容（如AI绘画、写作）或适应环境变化。\n\n---\n\n### **人工智能的分支领域**\n- **机器学习（ML）**：让机器通过数据自我优化，无需显式编程。\n- **深度学习（DL）**：基于神经网络的机器学习，擅长处理图像、语音等复杂数据。\n- **自然语言处理（NLP）**：让机器理解、生成人类语言（如ChatGPT）。\n- **计算机视觉**：使机器“看懂”图像和视频（如人脸识别、无人驾驶）。\n- **机器人技术**：结合硬件与AI实现物理世界的交互（如工业机器人）。\n\n---\n\n### **人工智能的应用场景**\n- **日常生活**：智能音箱、推荐系统（如抖音、淘宝）、语音翻译。\n- **医疗健康**：辅助诊断、药物研发、健康监测。\n- **工业与交通**：智能制造、自动驾驶、物流优化。\n- **创意领域**：AI绘画、音乐生成、新闻写作。\n- **科学研究**：气候预测、蛋白质结构分析（如AlphaFold）。\n\n---\n\n### **人工智能的发展阶段**\n1. **弱人工智能（ANI）**  \n   - 专注于特定任务（如下棋、翻译），当前大多数AI属于此类。\n2. **强人工智能（AGI）**  \n   - 具备人类全面智能，可跨领域学习与决策（尚未实现）。\n3. **超级人工智能（ASI）**  \n   - 智能超越全人类的总和（属于理论设想）。\n\n---\n\n### **挑战与争议**\n- **伦理问题**：隐私泄露、算法偏见、责任归属。\n- **就业影响**：自动化取代部分人力工作。\n- **安全风险**：AI被滥用（如深度伪造、自主武器）。\n- **技术瓶颈**：数据依赖、能耗高、泛化能力有限。\n\n---\n\n### **未来趋势**\n- **通用人工智能（AGI）探索**：让AI具备更全面的认知能力。\n- **AI与人类协作**：增强人类能力，而非完全替代。\n- **可解释性AI**：提高AI决策的透明度和可信度。\n- **伦理与法规**：全球范围内推动AI治理（如欧盟《人工智能法案》）。\n\n---\n\n人工智能正在重塑社会，它既是工具也是挑战。理解其原理与应用，有助于我们更好地利用技术，同时应对其带来的变革与风险。",
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:35:33.699388"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 3,
+      "final_output": "人工智能（Artificial Intelligence，简称 AI）是计算机科学的一个分支，旨在开发能够模拟、延伸和扩展人类智能的理论、方法、技术和应用系统。简单来说，人工智能是让机器具备类似人类的**学习、推理、感知、决策和创造**等能力的技术。\n\n---\n\n### **人工智能的核心特点**\n1. **学习能力**  \n   - 通过数据或经验自动改进性能（如机器学习、深度学习）。\n2. **推理与决策**  \n   - 处理复杂信息并做出逻辑判断（如自动驾驶、医疗诊断）。\n3. **感知与交互**  \n   - 识别图像、语音、文字等（如人脸识别、语音助手）。\n4. **自适应与创造**  \n   - 生成新内容（如AI绘画、写作）或适应环境变化。\n\n---\n\n### **人工智能的分支领域**\n- **机器学习（ML）**：让机器通过数据自我优化，无需显式编程。\n- **深度学习（DL）**：基于神经网络的机器学习，擅长处理图像、语音等复杂数据。\n- **自然语言处理（NLP）**：让机器理解、生成人类语言（如ChatGPT）。\n- **计算机视觉**：使机器“看懂”图像和视频（如人脸识别、无人驾驶）。\n- **机器人技术**：结合硬件与AI实现物理世界的交互（如工业机器人）。\n\n---\n\n### **人工智能的应用场景**\n- **日常生活**：智能音箱、推荐系统（如抖音、淘宝）、语音翻译。\n- **医疗健康**：辅助诊断、药物研发、健康监测。\n- **工业与交通**：智能制造、自动驾驶、物流优化。\n- **创意领域**：AI绘画、音乐生成、新闻写作。\n- **科学研究**：气候预测、蛋白质结构分析（如AlphaFold）。\n\n---\n\n### **人工智能的发展阶段**\n1. **弱人工智能（ANI）**  \n   - 专注于特定任务（如下棋、翻译），当前大多数AI属于此类。\n2. **强人工智能（AGI）**  \n   - 具备人类全面智能，可跨领域学习与决策（尚未实现）。\n3. **超级人工智能（ASI）**  \n   - 智能超越全人类的总和（属于理论设想）。\n\n---\n\n### **挑战与争议**\n- **伦理问题**：隐私泄露、算法偏见、责任归属。\n- **就业影响**：自动化取代部分人力工作。\n- **安全风险**：AI被滥用（如深度伪造、自主武器）。\n- **技术瓶颈**：数据依赖、能耗高、泛化能力有限。\n\n---\n\n### **未来趋势**\n- **通用人工智能（AGI）探索**：让AI具备更全面的认知能力。\n- **AI与人类协作**：增强人类能力，而非完全替代。\n- **可解释性AI**：提高AI决策的透明度和可信度。\n- **伦理与法规**：全球范围内推动AI治理（如欧盟《人工智能法案》）。\n\n---\n\n人工智能正在重塑社会，它既是工具也是挑战。理解其原理与应用，有助于我们更好地利用技术，同时应对其带来的变革与风险。",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:35:12.900627",
+      "end_time": "2026-04-14T23:35:33.699995",
+      "created_at": "2026-04-14T23:35:12.900641",
+      "metadata": {
+        "version": "1.0",
+        "env": "demo",
+        "framework": "langchain",
+        "input": {
+          "question": "什么是人工智能？"
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 20796.695232391357,
+            "token_usage": {
+              "completion_tokens": 629,
+              "prompt_tokens": 13,
+              "total_tokens": 642,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+              },
+              "prompt_cache_hit_tokens": 0,
+              "prompt_cache_miss_tokens": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "aaf5e8d4-cf8c-4ef2-8cae-33fb061b323d",
+      "query": "搜索人工智能的定义并计算 2+2",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": "搜索人工智能的定义并计算 2+2",
+          "output": null,
+          "time": null,
+          "success": false,
+          "err_msg": "Expected dict, got 搜索人工智能的定义并计算 2+2\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/INVALID_GRAPH_NODE_RETURN_VALUE",
+          "timestamp": "2026-04-14 23:35:33.751204"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 1,
+      "final_output": null,
+      "success": false,
+      "has_error": true,
+      "error_message": "Expected dict, got 搜索人工智能的定义并计算 2+2\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/INVALID_GRAPH_NODE_RETURN_VALUE",
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:35:33.751171",
+      "end_time": "2026-04-14T23:35:33.751840",
+      "created_at": "2026-04-14T23:35:33.751194",
+      "metadata": {
+        "framework": "langchain",
+        "input": "搜索人工智能的定义并计算 2+2"
+      }
+    },
+    {
+      "execution_id": "915b75f2-e71e-447e-9101-6179c47b0a29",
+      "query": "{'messages': [{'role': 'user', 'content': '搜索人工智能的定义并计算 2+2'}]}",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "搜索人工智能的定义并计算 2+2"
+              }
+            ]
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:47.748679"
+        },
+        {
+          "step": 2,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "c4e2fa38-c96f-4e00-9c12-28623b252f6e"
+              }
+            ]
+          },
+          "output": [
+            {
+              "graph": null,
+              "update": {
+                "messages": [
+                  {
+                    "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                    "additional_kwargs": {
+                      "refusal": null
+                    },
+                    "response_metadata": {
+                      "token_usage": {
+                        "completion_tokens": 86,
+                        "prompt_tokens": 352,
+                        "total_tokens": 438,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": {
+                          "audio_tokens": null,
+                          "cached_tokens": 0
+                        },
+                        "prompt_cache_hit_tokens": 0,
+                        "prompt_cache_miss_tokens": 352
+                      },
+                      "model_provider": "openai",
+                      "model_name": "deepseek-chat",
+                      "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                      "id": "56655953-b894-447d-97d0-6a4dd164c0df",
+                      "finish_reason": "tool_calls",
+                      "logprobs": null
+                    },
+                    "type": "ai",
+                    "name": null,
+                    "id": "lc_run--019d8ca3-5587-7a10-b142-7f6e0f360339-0",
+                    "tool_calls": [
+                      {
+                        "name": "search",
+                        "args": {
+                          "query": "人工智能的定义"
+                        },
+                        "id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                        "type": "tool_call"
+                      },
+                      {
+                        "name": "calculator",
+                        "args": {
+                          "expression": "2+2"
+                        },
+                        "id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                        "type": "tool_call"
+                      }
+                    ],
+                    "invalid_tool_calls": [],
+                    "usage_metadata": {
+                      "input_tokens": 352,
+                      "output_tokens": 86,
+                      "total_tokens": 438,
+                      "input_token_details": {
+                        "cache_read": 0
+                      },
+                      "output_token_details": {}
+                    }
+                  }
+                ]
+              },
+              "resume": null,
+              "goto": []
+            }
+          ],
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:47.749175"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "__type": "tool_call_with_context",
+            "tool_call": {
+              "name": "search",
+              "args": {
+                "query": "人工智能的定义"
+              },
+              "id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+              "type": "tool_call"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "搜索人工智能的定义并计算 2+2",
+                  "additional_kwargs": {},
+                  "response_metadata": {},
+                  "type": "human",
+                  "name": null,
+                  "id": "c4e2fa38-c96f-4e00-9c12-28623b252f6e"
+                },
+                {
+                  "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                  "additional_kwargs": {
+                    "refusal": null
+                  },
+                  "response_metadata": {
+                    "token_usage": {
+                      "completion_tokens": 86,
+                      "prompt_tokens": 352,
+                      "total_tokens": 438,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 0
+                      },
+                      "prompt_cache_hit_tokens": 0,
+                      "prompt_cache_miss_tokens": 352
+                    },
+                    "model_provider": "openai",
+                    "model_name": "deepseek-chat",
+                    "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                    "id": "56655953-b894-447d-97d0-6a4dd164c0df",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                  },
+                  "type": "ai",
+                  "name": null,
+                  "id": "lc_run--019d8ca3-5587-7a10-b142-7f6e0f360339-0",
+                  "tool_calls": [
+                    {
+                      "name": "search",
+                      "args": {
+                        "query": "人工智能的定义"
+                      },
+                      "id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                      "type": "tool_call"
+                    },
+                    {
+                      "name": "calculator",
+                      "args": {
+                        "expression": "2+2"
+                      },
+                      "id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "invalid_tool_calls": [],
+                  "usage_metadata": {
+                    "input_tokens": 352,
+                    "output_tokens": 86,
+                    "total_tokens": 438,
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "output_token_details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:51.874045"
+        },
+        {
+          "step": 4,
+          "description": "chain:unknown_chain",
+          "input": {
+            "__type": "tool_call_with_context",
+            "tool_call": {
+              "name": "calculator",
+              "args": {
+                "expression": "2+2"
+              },
+              "id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+              "type": "tool_call"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "搜索人工智能的定义并计算 2+2",
+                  "additional_kwargs": {},
+                  "response_metadata": {},
+                  "type": "human",
+                  "name": null,
+                  "id": "c4e2fa38-c96f-4e00-9c12-28623b252f6e"
+                },
+                {
+                  "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                  "additional_kwargs": {
+                    "refusal": null
+                  },
+                  "response_metadata": {
+                    "token_usage": {
+                      "completion_tokens": 86,
+                      "prompt_tokens": 352,
+                      "total_tokens": 438,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 0
+                      },
+                      "prompt_cache_hit_tokens": 0,
+                      "prompt_cache_miss_tokens": 352
+                    },
+                    "model_provider": "openai",
+                    "model_name": "deepseek-chat",
+                    "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                    "id": "56655953-b894-447d-97d0-6a4dd164c0df",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                  },
+                  "type": "ai",
+                  "name": null,
+                  "id": "lc_run--019d8ca3-5587-7a10-b142-7f6e0f360339-0",
+                  "tool_calls": [
+                    {
+                      "name": "search",
+                      "args": {
+                        "query": "人工智能的定义"
+                      },
+                      "id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                      "type": "tool_call"
+                    },
+                    {
+                      "name": "calculator",
+                      "args": {
+                        "expression": "2+2"
+                      },
+                      "id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "invalid_tool_calls": [],
+                  "usage_metadata": {
+                    "input_tokens": 352,
+                    "output_tokens": 86,
+                    "total_tokens": 438,
+                    "input_token_details": {
+                      "cache_read": 0
+                    },
+                    "output_token_details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "bdf444af-f8ef-432b-afb7-f35fdf8073a5",
+                "tool_call_id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:51.875774"
+        },
+        {
+          "step": 5,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "c4e2fa38-c96f-4e00-9c12-28623b252f6e"
+              },
+              {
+                "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 86,
+                    "prompt_tokens": 352,
+                    "total_tokens": 438,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 0
+                    },
+                    "prompt_cache_hit_tokens": 0,
+                    "prompt_cache_miss_tokens": 352
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "56655953-b894-447d-97d0-6a4dd164c0df",
+                  "finish_reason": "tool_calls",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8ca3-5587-7a10-b142-7f6e0f360339-0",
+                "tool_calls": [
+                  {
+                    "name": "search",
+                    "args": {
+                      "query": "人工智能的定义"
+                    },
+                    "id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                    "type": "tool_call"
+                  },
+                  {
+                    "name": "calculator",
+                    "args": {
+                      "expression": "2+2"
+                    },
+                    "id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 352,
+                  "output_tokens": 86,
+                  "total_tokens": 438,
+                  "input_token_details": {
+                    "cache_read": 0
+                  },
+                  "output_token_details": {}
+                }
+              },
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "fc125dcb-a825-464f-925b-25ba3caddf05",
+                "tool_call_id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "bdf444af-f8ef-432b-afb7-f35fdf8073a5",
+                "tool_call_id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "c4e2fa38-c96f-4e00-9c12-28623b252f6e"
+              },
+              {
+                "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 86,
+                    "prompt_tokens": 352,
+                    "total_tokens": 438,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 0
+                    },
+                    "prompt_cache_hit_tokens": 0,
+                    "prompt_cache_miss_tokens": 352
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "56655953-b894-447d-97d0-6a4dd164c0df",
+                  "finish_reason": "tool_calls",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8ca3-5587-7a10-b142-7f6e0f360339-0",
+                "tool_calls": [
+                  {
+                    "name": "search",
+                    "args": {
+                      "query": "人工智能的定义"
+                    },
+                    "id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                    "type": "tool_call"
+                  },
+                  {
+                    "name": "calculator",
+                    "args": {
+                      "expression": "2+2"
+                    },
+                    "id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 352,
+                  "output_tokens": 86,
+                  "total_tokens": 438,
+                  "input_token_details": {
+                    "cache_read": 0
+                  },
+                  "output_token_details": {}
+                }
+              },
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "fc125dcb-a825-464f-925b-25ba3caddf05",
+                "tool_call_id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "bdf444af-f8ef-432b-afb7-f35fdf8073a5",
+                "tool_call_id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "根据搜索结果和计算：\n\n1. **人工智能的定义**：人工智能（Artificial Intelligence，简称AI）是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式做出反应的智能机器。\n\n2. **2+2 的计算结果**：2 + 2 = 4\n\n人工智能的核心目标是让机器能够像人一样思考、学习、推理、感知、理解和交流，甚至在某些方面超越人类智能。它包括机器学习、深度学习、自然语言处理、计算机视觉等多个子领域。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 134,
+                    "prompt_tokens": 467,
+                    "total_tokens": 601,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 384
+                    },
+                    "prompt_cache_hit_tokens": 384,
+                    "prompt_cache_miss_tokens": 83
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "2462c647-529e-4c7d-a683-7c576efbfa05",
+                  "finish_reason": "stop",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8ca3-65aa-7b33-a0de-cc80f6b65136-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 467,
+                  "output_tokens": 134,
+                  "total_tokens": 601,
+                  "input_token_details": {
+                    "cache_read": 384
+                  },
+                  "output_token_details": {}
+                }
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:51.877868"
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_detail": [
+        {
+          "name": "search",
+          "input": {
+            "query": ""
+          },
+          "output": {
+            "content": "搜索结果: 人工智能的定义",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "search",
+            "id": "fc125dcb-a825-464f-925b-25ba3caddf05",
+            "tool_call_id": "call_00_2oEprgRWeCDESTtHS7a4pegg",
+            "artifact": null,
+            "status": "success"
+          },
+          "time": 0.5807876586914062,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:51.875498"
+        },
+        {
+          "name": "calculator",
+          "input": {
+            "query": ""
+          },
+          "output": {
+            "content": "4",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "calculator",
+            "id": "bdf444af-f8ef-432b-afb7-f35fdf8073a5",
+            "tool_call_id": "call_01_GknECl5suY0aQ1AxPCVmYbEa",
+            "artifact": null,
+            "status": "success"
+          },
+          "time": 0.3299713134765625,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:36:51.877146"
+        }
+      ],
+      "step_count": 5,
+      "final_output": "{'messages': [HumanMessage(content='搜索人工智能的定义并计算 2+2', additional_kwargs={}, response_metadata={}, id='c4e2fa38-c96f-4e00-9c12-28623b252f6e'), AIMessage(content='我来帮您搜索人工智能的定义并计算 2+2。', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 86, 'prompt_tokens': 352, 'total_tokens': 438, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 0}, 'prompt_cache_hit_tokens': 0, 'prompt_cache_miss_tokens': 352}, 'model_provider': 'openai', 'model_name': 'deepseek-chat', 'system_fingerprint': 'fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410', 'id': '56655953-b894-447d-97d0-6a4dd164c0df', 'finish_reason': 'tool_calls', 'logprobs': None}, id='lc_run--019d8ca3-5587-7a10-b142-7f6e0f360339-0', tool_calls=[{'name': 'search', 'args': {'query': '人工智能的定义'}, 'id': 'call_00_2oEprgRWeCDESTtHS7a4pegg', 'type': 'tool_call'}, {'name': 'calculator', 'args': {'expression': '2+2'}, 'id': 'call_01_GknECl5suY0aQ1AxPCVmYbEa', 'type': 'tool_call'}], invalid_tool_calls=[], usage_metadata={'input_tokens': 352, 'output_tokens': 86, 'total_tokens': 438, 'input_token_details': {'cache_read': 0}, 'output_token_details': {}}), ToolMessage(content='搜索结果: 人工智能的定义', name='search', id='fc125dcb-a825-464f-925b-25ba3caddf05', tool_call_id='call_00_2oEprgRWeCDESTtHS7a4pegg'), ToolMessage(content='4', name='calculator', id='bdf444af-f8ef-432b-afb7-f35fdf8073a5', tool_call_id='call_01_GknECl5suY0aQ1AxPCVmYbEa'), AIMessage(content='根据搜索结果和计算：\\n\\n1. **人工智能的定义**：人工智能（Artificial Intelligence，简称AI）是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式做出反应的智能机器。\\n\\n2. **2+2 的计算结果**：2 + 2 = 4\\n\\n人工智能的核心目标是让机器能够像人一样思考、学习、推理、感知、理解和交流，甚至在某些方面超越人类智能。它包括机器学习、深度学习、自然语言处理、计算机视觉等多个子领域。', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 134, 'prompt_tokens': 467, 'total_tokens': 601, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 384}, 'prompt_cache_hit_tokens': 384, 'prompt_cache_miss_tokens': 83}, 'model_provider': 'openai', 'model_name': 'deepseek-chat', 'system_fingerprint': 'fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410', 'id': '2462c647-529e-4c7d-a683-7c576efbfa05', 'finish_reason': 'stop', 'logprobs': None}, id='lc_run--019d8ca3-65aa-7b33-a0de-cc80f6b65136-0', tool_calls=[], invalid_tool_calls=[], usage_metadata={'input_tokens': 467, 'output_tokens': 134, 'total_tokens': 601, 'input_token_details': {'cache_read': 384}, 'output_token_details': {}})]}",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:36:47.748654",
+      "end_time": "2026-04-14T23:36:57.431293",
+      "created_at": "2026-04-14T23:36:47.748668",
+      "metadata": {
+        "framework": "langchain",
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "搜索人工智能的定义并计算 2+2"
+            }
+          ]
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 4119.693756103516,
+            "token_usage": {
+              "completion_tokens": 86,
+              "prompt_tokens": 352,
+              "total_tokens": 438,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0
+              },
+              "prompt_cache_hit_tokens": 0,
+              "prompt_cache_miss_tokens": 352
+            }
+          },
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 5540.881872177124,
+            "token_usage": {
+              "completion_tokens": 134,
+              "prompt_tokens": 467,
+              "total_tokens": 601,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 384
+              },
+              "prompt_cache_hit_tokens": 384,
+              "prompt_cache_miss_tokens": 83
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "4935d756-b7d9-4e68-bbf4-b7c82d52754d",
+      "query": "{'messages': [{'role': 'user', 'content': '搜索人工智能的定义并计算 2+2'}]}",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "搜索人工智能的定义并计算 2+2"
+              }
+            ]
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:22.962256"
+        },
+        {
+          "step": 2,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "966a493e-51d9-47c3-ace8-be3b4b3b5e0c"
+              }
+            ]
+          },
+          "output": [
+            {
+              "graph": null,
+              "update": {
+                "messages": [
+                  {
+                    "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                    "additional_kwargs": {
+                      "refusal": null
+                    },
+                    "response_metadata": {
+                      "token_usage": {
+                        "completion_tokens": 86,
+                        "prompt_tokens": 352,
+                        "total_tokens": 438,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": {
+                          "audio_tokens": null,
+                          "cached_tokens": 320
+                        },
+                        "prompt_cache_hit_tokens": 320,
+                        "prompt_cache_miss_tokens": 32
+                      },
+                      "model_provider": "openai",
+                      "model_name": "deepseek-chat",
+                      "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                      "id": "c6980302-0dea-488e-8f9e-bc1bf26b448a",
+                      "finish_reason": "tool_calls",
+                      "logprobs": null
+                    },
+                    "type": "ai",
+                    "name": null,
+                    "id": "lc_run--019d8ca3-df14-7f11-83bb-a374151e5f03-0",
+                    "tool_calls": [
+                      {
+                        "name": "search",
+                        "args": {
+                          "query": "人工智能的定义"
+                        },
+                        "id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                        "type": "tool_call"
+                      },
+                      {
+                        "name": "calculator",
+                        "args": {
+                          "expression": "2+2"
+                        },
+                        "id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                        "type": "tool_call"
+                      }
+                    ],
+                    "invalid_tool_calls": [],
+                    "usage_metadata": {
+                      "input_tokens": 352,
+                      "output_tokens": 86,
+                      "total_tokens": 438,
+                      "input_token_details": {
+                        "cache_read": 320
+                      },
+                      "output_token_details": {}
+                    }
+                  }
+                ]
+              },
+              "resume": null,
+              "goto": []
+            }
+          ],
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:22.962758"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "__type": "tool_call_with_context",
+            "tool_call": {
+              "name": "search",
+              "args": {
+                "query": "人工智能的定义"
+              },
+              "id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+              "type": "tool_call"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "搜索人工智能的定义并计算 2+2",
+                  "additional_kwargs": {},
+                  "response_metadata": {},
+                  "type": "human",
+                  "name": null,
+                  "id": "966a493e-51d9-47c3-ace8-be3b4b3b5e0c"
+                },
+                {
+                  "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                  "additional_kwargs": {
+                    "refusal": null
+                  },
+                  "response_metadata": {
+                    "token_usage": {
+                      "completion_tokens": 86,
+                      "prompt_tokens": 352,
+                      "total_tokens": 438,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 320
+                      },
+                      "prompt_cache_hit_tokens": 320,
+                      "prompt_cache_miss_tokens": 32
+                    },
+                    "model_provider": "openai",
+                    "model_name": "deepseek-chat",
+                    "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                    "id": "c6980302-0dea-488e-8f9e-bc1bf26b448a",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                  },
+                  "type": "ai",
+                  "name": null,
+                  "id": "lc_run--019d8ca3-df14-7f11-83bb-a374151e5f03-0",
+                  "tool_calls": [
+                    {
+                      "name": "search",
+                      "args": {
+                        "query": "人工智能的定义"
+                      },
+                      "id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                      "type": "tool_call"
+                    },
+                    {
+                      "name": "calculator",
+                      "args": {
+                        "expression": "2+2"
+                      },
+                      "id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "invalid_tool_calls": [],
+                  "usage_metadata": {
+                    "input_tokens": 352,
+                    "output_tokens": 86,
+                    "total_tokens": 438,
+                    "input_token_details": {
+                      "cache_read": 320
+                    },
+                    "output_token_details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "0e368e4f-6374-465c-83c4-21921d8e4a34",
+                "tool_call_id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:27.436091"
+        },
+        {
+          "step": 4,
+          "description": "chain:unknown_chain",
+          "input": {
+            "__type": "tool_call_with_context",
+            "tool_call": {
+              "name": "calculator",
+              "args": {
+                "expression": "2+2"
+              },
+              "id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+              "type": "tool_call"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "搜索人工智能的定义并计算 2+2",
+                  "additional_kwargs": {},
+                  "response_metadata": {},
+                  "type": "human",
+                  "name": null,
+                  "id": "966a493e-51d9-47c3-ace8-be3b4b3b5e0c"
+                },
+                {
+                  "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                  "additional_kwargs": {
+                    "refusal": null
+                  },
+                  "response_metadata": {
+                    "token_usage": {
+                      "completion_tokens": 86,
+                      "prompt_tokens": 352,
+                      "total_tokens": 438,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 320
+                      },
+                      "prompt_cache_hit_tokens": 320,
+                      "prompt_cache_miss_tokens": 32
+                    },
+                    "model_provider": "openai",
+                    "model_name": "deepseek-chat",
+                    "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                    "id": "c6980302-0dea-488e-8f9e-bc1bf26b448a",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                  },
+                  "type": "ai",
+                  "name": null,
+                  "id": "lc_run--019d8ca3-df14-7f11-83bb-a374151e5f03-0",
+                  "tool_calls": [
+                    {
+                      "name": "search",
+                      "args": {
+                        "query": "人工智能的定义"
+                      },
+                      "id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                      "type": "tool_call"
+                    },
+                    {
+                      "name": "calculator",
+                      "args": {
+                        "expression": "2+2"
+                      },
+                      "id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "invalid_tool_calls": [],
+                  "usage_metadata": {
+                    "input_tokens": 352,
+                    "output_tokens": 86,
+                    "total_tokens": 438,
+                    "input_token_details": {
+                      "cache_read": 320
+                    },
+                    "output_token_details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "6f611e64-96a4-46c4-9d31-5d1efaa1e346",
+                "tool_call_id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:27.437535"
+        },
+        {
+          "step": 5,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "966a493e-51d9-47c3-ace8-be3b4b3b5e0c"
+              },
+              {
+                "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 86,
+                    "prompt_tokens": 352,
+                    "total_tokens": 438,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 320
+                    },
+                    "prompt_cache_hit_tokens": 320,
+                    "prompt_cache_miss_tokens": 32
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "c6980302-0dea-488e-8f9e-bc1bf26b448a",
+                  "finish_reason": "tool_calls",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8ca3-df14-7f11-83bb-a374151e5f03-0",
+                "tool_calls": [
+                  {
+                    "name": "search",
+                    "args": {
+                      "query": "人工智能的定义"
+                    },
+                    "id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                    "type": "tool_call"
+                  },
+                  {
+                    "name": "calculator",
+                    "args": {
+                      "expression": "2+2"
+                    },
+                    "id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 352,
+                  "output_tokens": 86,
+                  "total_tokens": 438,
+                  "input_token_details": {
+                    "cache_read": 320
+                  },
+                  "output_token_details": {}
+                }
+              },
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "0e368e4f-6374-465c-83c4-21921d8e4a34",
+                "tool_call_id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "6f611e64-96a4-46c4-9d31-5d1efaa1e346",
+                "tool_call_id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "966a493e-51d9-47c3-ace8-be3b4b3b5e0c"
+              },
+              {
+                "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 86,
+                    "prompt_tokens": 352,
+                    "total_tokens": 438,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 320
+                    },
+                    "prompt_cache_hit_tokens": 320,
+                    "prompt_cache_miss_tokens": 32
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "c6980302-0dea-488e-8f9e-bc1bf26b448a",
+                  "finish_reason": "tool_calls",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8ca3-df14-7f11-83bb-a374151e5f03-0",
+                "tool_calls": [
+                  {
+                    "name": "search",
+                    "args": {
+                      "query": "人工智能的定义"
+                    },
+                    "id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                    "type": "tool_call"
+                  },
+                  {
+                    "name": "calculator",
+                    "args": {
+                      "expression": "2+2"
+                    },
+                    "id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 352,
+                  "output_tokens": 86,
+                  "total_tokens": 438,
+                  "input_token_details": {
+                    "cache_read": 320
+                  },
+                  "output_token_details": {}
+                }
+              },
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "0e368e4f-6374-465c-83c4-21921d8e4a34",
+                "tool_call_id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "6f611e64-96a4-46c4-9d31-5d1efaa1e346",
+                "tool_call_id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "根据搜索结果和计算：\n\n1. **人工智能的定义**：人工智能（Artificial Intelligence，简称AI）是计算机科学的一个分支，旨在研究、开发能够模拟、延伸和扩展人类智能的理论、方法、技术及应用系统。它涉及使机器能够像人类一样思考、学习、推理、感知、理解和交流，包括机器学习、自然语言处理、计算机视觉、机器人技术等多个领域。\n\n2. **2+2 的计算结果**：2 + 2 = 4\n\n人工智能的核心目标是创造能够执行通常需要人类智能才能完成的任务的智能系统，这些系统可以通过学习、推理和自我修正来改进性能。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 128,
+                    "prompt_tokens": 467,
+                    "total_tokens": 595,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 448
+                    },
+                    "prompt_cache_hit_tokens": 448,
+                    "prompt_cache_miss_tokens": 19
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "1433dfa3-7290-4483-859c-2b575f078308",
+                  "finish_reason": "stop",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8ca3-f091-7090-8ff6-2d5321bc7d3f-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 467,
+                  "output_tokens": 128,
+                  "total_tokens": 595,
+                  "input_token_details": {
+                    "cache_read": 448
+                  },
+                  "output_token_details": {}
+                }
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:27.438279"
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_detail": [
+        {
+          "name": "search",
+          "input": {
+            "query": ""
+          },
+          "output": {
+            "content": "搜索结果: 人工智能的定义",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "search",
+            "id": "0e368e4f-6374-465c-83c4-21921d8e4a34",
+            "tool_call_id": "call_00_3qfRpPHGTwILgmfnF0Hx7XuG",
+            "artifact": null,
+            "status": "success"
+          },
+          "time": 0.33211708068847656,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:27.437047"
+        },
+        {
+          "name": "calculator",
+          "input": {
+            "query": ""
+          },
+          "output": {
+            "content": "4",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "calculator",
+            "id": "6f611e64-96a4-46c4-9d31-5d1efaa1e346",
+            "tool_call_id": "call_01_sb4bqmpokw6B2jLgiAGg4iPZ",
+            "artifact": null,
+            "status": "success"
+          },
+          "time": 0.13589859008789062,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:37:27.437870"
+        }
+      ],
+      "step_count": 5,
+      "final_output": "{'messages': [HumanMessage(content='搜索人工智能的定义并计算 2+2', additional_kwargs={}, response_metadata={}, id='966a493e-51d9-47c3-ace8-be3b4b3b5e0c'), AIMessage(content='我来帮您搜索人工智能的定义并计算 2+2。', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 86, 'prompt_tokens': 352, 'total_tokens': 438, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 320}, 'prompt_cache_hit_tokens': 320, 'prompt_cache_miss_tokens': 32}, 'model_provider': 'openai', 'model_name': 'deepseek-chat', 'system_fingerprint': 'fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410', 'id': 'c6980302-0dea-488e-8f9e-bc1bf26b448a', 'finish_reason': 'tool_calls', 'logprobs': None}, id='lc_run--019d8ca3-df14-7f11-83bb-a374151e5f03-0', tool_calls=[{'name': 'search', 'args': {'query': '人工智能的定义'}, 'id': 'call_00_3qfRpPHGTwILgmfnF0Hx7XuG', 'type': 'tool_call'}, {'name': 'calculator', 'args': {'expression': '2+2'}, 'id': 'call_01_sb4bqmpokw6B2jLgiAGg4iPZ', 'type': 'tool_call'}], invalid_tool_calls=[], usage_metadata={'input_tokens': 352, 'output_tokens': 86, 'total_tokens': 438, 'input_token_details': {'cache_read': 320}, 'output_token_details': {}}), ToolMessage(content='搜索结果: 人工智能的定义', name='search', id='0e368e4f-6374-465c-83c4-21921d8e4a34', tool_call_id='call_00_3qfRpPHGTwILgmfnF0Hx7XuG'), ToolMessage(content='4', name='calculator', id='6f611e64-96a4-46c4-9d31-5d1efaa1e346', tool_call_id='call_01_sb4bqmpokw6B2jLgiAGg4iPZ'), AIMessage(content='根据搜索结果和计算：\\n\\n1. **人工智能的定义**：人工智能（Artificial Intelligence，简称AI）是计算机科学的一个分支，旨在研究、开发能够模拟、延伸和扩展人类智能的理论、方法、技术及应用系统。它涉及使机器能够像人类一样思考、学习、推理、感知、理解和交流，包括机器学习、自然语言处理、计算机视觉、机器人技术等多个领域。\\n\\n2. **2+2 的计算结果**：2 + 2 = 4\\n\\n人工智能的核心目标是创造能够执行通常需要人类智能才能完成的任务的智能系统，这些系统可以通过学习、推理和自我修正来改进性能。', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 128, 'prompt_tokens': 467, 'total_tokens': 595, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cached_tokens': 448}, 'prompt_cache_hit_tokens': 448, 'prompt_cache_miss_tokens': 19}, 'model_provider': 'openai', 'model_name': 'deepseek-chat', 'system_fingerprint': 'fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410', 'id': '1433dfa3-7290-4483-859c-2b575f078308', 'finish_reason': 'stop', 'logprobs': None}, id='lc_run--019d8ca3-f091-7090-8ff6-2d5321bc7d3f-0', tool_calls=[], invalid_tool_calls=[], usage_metadata={'input_tokens': 467, 'output_tokens': 128, 'total_tokens': 595, 'input_token_details': {'cache_read': 448}, 'output_token_details': {}})]}",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:37:22.962234",
+      "end_time": "2026-04-14T23:37:33.859352",
+      "created_at": "2026-04-14T23:37:22.962247",
+      "metadata": {
+        "framework": "langchain",
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "搜索人工智能的定义并计算 2+2"
+            }
+          ]
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 4467.469930648804,
+            "token_usage": {
+              "completion_tokens": 86,
+              "prompt_tokens": 352,
+              "total_tokens": 438,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 320
+              },
+              "prompt_cache_hit_tokens": 320,
+              "prompt_cache_miss_tokens": 32
+            }
+          },
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 6417.756795883179,
+            "token_usage": {
+              "completion_tokens": 128,
+              "prompt_tokens": 467,
+              "total_tokens": 595,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 448
+              },
+              "prompt_cache_hit_tokens": 448,
+              "prompt_cache_miss_tokens": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "38d44c43-d3f7-4e2c-a6ba-15a0e833e275",
+      "query": "{'messages': [{'role': 'user', 'content': '搜索人工智能的定义并计算 2+2'}]}",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "搜索人工智能的定义并计算 2+2"
+              }
+            ]
+          },
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:36.179909"
+        },
+        {
+          "step": 2,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "9f585649-65e2-4165-bf67-303cb5513a8e"
+              }
+            ]
+          },
+          "output": [
+            {
+              "graph": null,
+              "update": {
+                "messages": [
+                  {
+                    "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                    "additional_kwargs": {
+                      "refusal": null
+                    },
+                    "response_metadata": {
+                      "token_usage": {
+                        "completion_tokens": 86,
+                        "prompt_tokens": 352,
+                        "total_tokens": 438,
+                        "completion_tokens_details": null,
+                        "prompt_tokens_details": {
+                          "audio_tokens": null,
+                          "cached_tokens": 320
+                        },
+                        "prompt_cache_hit_tokens": 320,
+                        "prompt_cache_miss_tokens": 32
+                      },
+                      "model_provider": "openai",
+                      "model_name": "deepseek-chat",
+                      "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                      "id": "c50f0c82-ea59-4f88-b4da-cec4aeba52d1",
+                      "finish_reason": "tool_calls",
+                      "logprobs": null
+                    },
+                    "type": "ai",
+                    "name": null,
+                    "id": "lc_run--019d8caa-7b56-7630-97ce-adea64a67df2-0",
+                    "tool_calls": [
+                      {
+                        "name": "search",
+                        "args": {
+                          "query": "人工智能的定义"
+                        },
+                        "id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                        "type": "tool_call"
+                      },
+                      {
+                        "name": "calculator",
+                        "args": {
+                          "expression": "2+2"
+                        },
+                        "id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                        "type": "tool_call"
+                      }
+                    ],
+                    "invalid_tool_calls": [],
+                    "usage_metadata": {
+                      "input_tokens": 352,
+                      "output_tokens": 86,
+                      "total_tokens": 438,
+                      "input_token_details": {
+                        "cache_read": 320
+                      },
+                      "output_token_details": {}
+                    }
+                  }
+                ]
+              },
+              "resume": null,
+              "goto": []
+            }
+          ],
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:36.180416"
+        },
+        {
+          "step": 3,
+          "description": "chain:unknown_chain",
+          "input": {
+            "__type": "tool_call_with_context",
+            "tool_call": {
+              "name": "search",
+              "args": {
+                "query": "人工智能的定义"
+              },
+              "id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+              "type": "tool_call"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "搜索人工智能的定义并计算 2+2",
+                  "additional_kwargs": {},
+                  "response_metadata": {},
+                  "type": "human",
+                  "name": null,
+                  "id": "9f585649-65e2-4165-bf67-303cb5513a8e"
+                },
+                {
+                  "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                  "additional_kwargs": {
+                    "refusal": null
+                  },
+                  "response_metadata": {
+                    "token_usage": {
+                      "completion_tokens": 86,
+                      "prompt_tokens": 352,
+                      "total_tokens": 438,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 320
+                      },
+                      "prompt_cache_hit_tokens": 320,
+                      "prompt_cache_miss_tokens": 32
+                    },
+                    "model_provider": "openai",
+                    "model_name": "deepseek-chat",
+                    "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                    "id": "c50f0c82-ea59-4f88-b4da-cec4aeba52d1",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                  },
+                  "type": "ai",
+                  "name": null,
+                  "id": "lc_run--019d8caa-7b56-7630-97ce-adea64a67df2-0",
+                  "tool_calls": [
+                    {
+                      "name": "search",
+                      "args": {
+                        "query": "人工智能的定义"
+                      },
+                      "id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                      "type": "tool_call"
+                    },
+                    {
+                      "name": "calculator",
+                      "args": {
+                        "expression": "2+2"
+                      },
+                      "id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "invalid_tool_calls": [],
+                  "usage_metadata": {
+                    "input_tokens": 352,
+                    "output_tokens": 86,
+                    "total_tokens": 438,
+                    "input_token_details": {
+                      "cache_read": 320
+                    },
+                    "output_token_details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "1dffe6e5-920e-455d-862b-10bb468ca010",
+                "tool_call_id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:40.503351"
+        },
+        {
+          "step": 4,
+          "description": "chain:unknown_chain",
+          "input": {
+            "__type": "tool_call_with_context",
+            "tool_call": {
+              "name": "calculator",
+              "args": {
+                "expression": "2+2"
+              },
+              "id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+              "type": "tool_call"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "搜索人工智能的定义并计算 2+2",
+                  "additional_kwargs": {},
+                  "response_metadata": {},
+                  "type": "human",
+                  "name": null,
+                  "id": "9f585649-65e2-4165-bf67-303cb5513a8e"
+                },
+                {
+                  "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                  "additional_kwargs": {
+                    "refusal": null
+                  },
+                  "response_metadata": {
+                    "token_usage": {
+                      "completion_tokens": 86,
+                      "prompt_tokens": 352,
+                      "total_tokens": 438,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 320
+                      },
+                      "prompt_cache_hit_tokens": 320,
+                      "prompt_cache_miss_tokens": 32
+                    },
+                    "model_provider": "openai",
+                    "model_name": "deepseek-chat",
+                    "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                    "id": "c50f0c82-ea59-4f88-b4da-cec4aeba52d1",
+                    "finish_reason": "tool_calls",
+                    "logprobs": null
+                  },
+                  "type": "ai",
+                  "name": null,
+                  "id": "lc_run--019d8caa-7b56-7630-97ce-adea64a67df2-0",
+                  "tool_calls": [
+                    {
+                      "name": "search",
+                      "args": {
+                        "query": "人工智能的定义"
+                      },
+                      "id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                      "type": "tool_call"
+                    },
+                    {
+                      "name": "calculator",
+                      "args": {
+                        "expression": "2+2"
+                      },
+                      "id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                      "type": "tool_call"
+                    }
+                  ],
+                  "invalid_tool_calls": [],
+                  "usage_metadata": {
+                    "input_tokens": 352,
+                    "output_tokens": 86,
+                    "total_tokens": 438,
+                    "input_token_details": {
+                      "cache_read": 320
+                    },
+                    "output_token_details": {}
+                  }
+                }
+              ]
+            }
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "2d5aaf83-786d-4915-a46f-a2daec42c0ac",
+                "tool_call_id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:40.505515"
+        },
+        {
+          "step": 5,
+          "description": "chain:unknown_chain",
+          "input": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "9f585649-65e2-4165-bf67-303cb5513a8e"
+              },
+              {
+                "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 86,
+                    "prompt_tokens": 352,
+                    "total_tokens": 438,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 320
+                    },
+                    "prompt_cache_hit_tokens": 320,
+                    "prompt_cache_miss_tokens": 32
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "c50f0c82-ea59-4f88-b4da-cec4aeba52d1",
+                  "finish_reason": "tool_calls",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8caa-7b56-7630-97ce-adea64a67df2-0",
+                "tool_calls": [
+                  {
+                    "name": "search",
+                    "args": {
+                      "query": "人工智能的定义"
+                    },
+                    "id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                    "type": "tool_call"
+                  },
+                  {
+                    "name": "calculator",
+                    "args": {
+                      "expression": "2+2"
+                    },
+                    "id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 352,
+                  "output_tokens": 86,
+                  "total_tokens": 438,
+                  "input_token_details": {
+                    "cache_read": 320
+                  },
+                  "output_token_details": {}
+                }
+              },
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "1dffe6e5-920e-455d-862b-10bb468ca010",
+                "tool_call_id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "2d5aaf83-786d-4915-a46f-a2daec42c0ac",
+                "tool_call_id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                "artifact": null,
+                "status": "success"
+              }
+            ]
+          },
+          "output": {
+            "messages": [
+              {
+                "content": "搜索人工智能的定义并计算 2+2",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "9f585649-65e2-4165-bf67-303cb5513a8e"
+              },
+              {
+                "content": "我来帮您搜索人工智能的定义并计算 2+2。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 86,
+                    "prompt_tokens": 352,
+                    "total_tokens": 438,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 320
+                    },
+                    "prompt_cache_hit_tokens": 320,
+                    "prompt_cache_miss_tokens": 32
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "c50f0c82-ea59-4f88-b4da-cec4aeba52d1",
+                  "finish_reason": "tool_calls",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8caa-7b56-7630-97ce-adea64a67df2-0",
+                "tool_calls": [
+                  {
+                    "name": "search",
+                    "args": {
+                      "query": "人工智能的定义"
+                    },
+                    "id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                    "type": "tool_call"
+                  },
+                  {
+                    "name": "calculator",
+                    "args": {
+                      "expression": "2+2"
+                    },
+                    "id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 352,
+                  "output_tokens": 86,
+                  "total_tokens": 438,
+                  "input_token_details": {
+                    "cache_read": 320
+                  },
+                  "output_token_details": {}
+                }
+              },
+              {
+                "content": "搜索结果: 人工智能的定义",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "search",
+                "id": "1dffe6e5-920e-455d-862b-10bb468ca010",
+                "tool_call_id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "4",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "calculator",
+                "id": "2d5aaf83-786d-4915-a46f-a2daec42c0ac",
+                "tool_call_id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "根据搜索结果和计算：\n\n1. **人工智能的定义**：人工智能（Artificial Intelligence，简称AI）是计算机科学的一个分支，旨在研究和开发能够模拟、延伸和扩展人类智能的理论、方法、技术及应用系统。人工智能的核心目标是使机器能够像人类一样思考、学习、推理、感知、理解和交流，甚至在某些方面超越人类智能。\n\n2. **2+2 的计算结果**：2 + 2 = 4\n\n人工智能通常包括以下几个主要领域：\n- 机器学习\n- 自然语言处理\n- 计算机视觉\n- 机器人技术\n- 专家系统\n- 语音识别等\n\n人工智能技术已经广泛应用于各个领域，如医疗诊断、自动驾驶、智能客服、金融分析、教育等，正在深刻改变着我们的生活方式和工作方式。",
+                "additional_kwargs": {
+                  "refusal": null
+                },
+                "response_metadata": {
+                  "token_usage": {
+                    "completion_tokens": 160,
+                    "prompt_tokens": 467,
+                    "total_tokens": 627,
+                    "completion_tokens_details": null,
+                    "prompt_tokens_details": {
+                      "audio_tokens": null,
+                      "cached_tokens": 448
+                    },
+                    "prompt_cache_hit_tokens": 448,
+                    "prompt_cache_miss_tokens": 19
+                  },
+                  "model_provider": "openai",
+                  "model_name": "deepseek-chat",
+                  "system_fingerprint": "fp_eaab8d114b_prod0820_fp8_kvcache_new_kvcache_20260410",
+                  "id": "3f8e4552-15f7-4437-8143-11784f793ba0",
+                  "finish_reason": "stop",
+                  "logprobs": null
+                },
+                "type": "ai",
+                "name": null,
+                "id": "lc_run--019d8caa-8c3f-7a22-a963-8a62cf151719-0",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": {
+                  "input_tokens": 467,
+                  "output_tokens": 160,
+                  "total_tokens": 627,
+                  "input_token_details": {
+                    "cache_read": 448
+                  },
+                  "output_token_details": {}
+                }
+              }
+            ]
+          },
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:40.506910"
+        }
+      ],
+      "tool_call_count": 2,
+      "tool_calls_detail": [
+        {
+          "name": "search",
+          "input": {
+            "query": ""
+          },
+          "output": {
+            "content": "搜索结果: 人工智能的定义",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "search",
+            "id": "1dffe6e5-920e-455d-862b-10bb468ca010",
+            "tool_call_id": "call_00_p6v3zEAXVvmg6e73zbcpVA7Q",
+            "artifact": null,
+            "status": "success"
+          },
+          "time": 0.5559921264648438,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:40.504800"
+        },
+        {
+          "name": "calculator",
+          "input": {
+            "query": ""
+          },
+          "output": {
+            "content": "4",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "calculator",
+            "id": "2d5aaf83-786d-4915-a46f-a2daec42c0ac",
+            "tool_call_id": "call_01_lLx2ma0wsK8jmKZHW9NKGrNg",
+            "artifact": null,
+            "status": "success"
+          },
+          "time": 0.2849102020263672,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 23:44:40.506169"
+        }
+      ],
+      "step_count": 5,
+      "final_output": "根据搜索结果和计算：\n\n1. **人工智能的定义**：人工智能（Artificial Intelligence，简称AI）是计算机科学的一个分支，旨在研究和开发能够模拟、延伸和扩展人类智能的理论、方法、技术及应用系统。人工智能的核心目标是使机器能够像人类一样思考、学习、推理、感知、理解和交流，甚至在某些方面超越人类智能。\n\n2. **2+2 的计算结果**：2 + 2 = 4\n\n人工智能通常包括以下几个主要领域：\n- 机器学习\n- 自然语言处理\n- 计算机视觉\n- 机器人技术\n- 专家系统\n- 语音识别等\n\n人工智能技术已经广泛应用于各个领域，如医疗诊断、自动驾驶、智能客服、金融分析、教育等，正在深刻改变着我们的生活方式和工作方式。",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-14T23:44:36.179887",
+      "end_time": "2026-04-14T23:44:46.796962",
+      "created_at": "2026-04-14T23:44:36.179899",
+      "metadata": {
+        "framework": "langchain",
+        "input": {
+          "messages": [
+            {
+              "role": "user",
+              "content": "搜索人工智能的定义并计算 2+2"
+            }
+          ]
+        },
+        "llm_calls": [
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 4317.842960357666,
+            "token_usage": {
+              "completion_tokens": 86,
+              "prompt_tokens": 352,
+              "total_tokens": 438,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 320
+              },
+              "prompt_cache_hit_tokens": 320,
+              "prompt_cache_miss_tokens": 32
+            }
+          },
+          {
+            "model": "ChatOpenAI",
+            "duration_ms": 6284.068822860718,
+            "token_usage": {
+              "completion_tokens": 160,
+              "prompt_tokens": 467,
+              "total_tokens": 627,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 448
+              },
+              "prompt_cache_hit_tokens": 448,
+              "prompt_cache_miss_tokens": 19
+            }
+          }
+        ]
+      }
+    },
+    {
+      "execution_id": "01100861-8923-4dc1-b5a2-239cc0910271",
+      "query": "什么是机器学习？",
+      "steps_summary": "",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "node:graph",
+          "input": {
+            "query": "什么是机器学习？"
+          },
+          "output": {
+            "query": "什么是机器学习？",
+            "context": [
+              "关于 什么是机器学习？ 的信息..."
+            ],
+            "answer": "根据上下文，什么是机器学习？ 是...",
+            "steps": [
+              "generate"
+            ]
+          },
+          "time": 1.6357898712158203,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-15 08:52:04.974270"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 1,
+      "final_output": "{'query': '什么是机器学习？', 'context': ['关于 什么是机器学习？ 的信息...'], 'answer': '根据上下文，什么是机器学习？ 是...', 'steps': ['generate']}",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": null,
+      "start_time": "2026-04-15T08:52:04.974043",
+      "end_time": "2026-04-15T08:52:04.975907",
+      "created_at": "2026-04-15T08:52:04.974249",
+      "metadata": {
+        "type": "rag",
+        "framework": "langgraph",
+        "input": {
+          "query": "什么是机器学习？"
+        }
+      }
+    }
+  ],
+  "evaluations": []
+}

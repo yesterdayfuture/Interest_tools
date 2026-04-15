@@ -9,6 +9,7 @@
 | 项目名称 | 技术栈 | 功能描述 |
 |:---------|:-------|:---------|
 | [ChatRoom](./ChatRoom) | FastAPI + Vue 3 + WebSocket | 实时聊天室应用，支持私聊、群聊、好友系统和群组邀请 |
+| [agent_eval](./agent_eval) | Python + 装饰器 + SQLite/PostgreSQL | AI Agent 评估系统，零代码侵入式集成 |
 | [dispatch_center_asyncio](./dispatch_center_asyncio) | FastAPI + SQLAlchemy + asyncio | 基于 asyncio.Semaphore 的任务调度中心 |
 | [dispatch_center_process](./dispatch_center_process) | FastAPI + SQLAlchemy + multiprocessing | 基于多进程的任务调度中心 |
 | [dispatch_center_thteading](./dispatch_center_thteading) | FastAPI + SQLAlchemy + ThreadPoolExecutor | 基于线程池的任务调度中心 |
@@ -16,6 +17,7 @@
 | [simulation_claude_code_skill](./simulation_claude_code_skill) | FastAPI + OpenAI | Claude Code Skills 系统模拟实现 |
 | [testRuntimeRegister](./testRuntimeRegister) | Python + FastAPI + importlib | 运行时动态加载模块，不重启服务即可使用新文件中的函数 |
 | [use_importlib_module](./use_importlib_module) | Python + importlib | 学习动态导入模块的各种方法 |
+| [use_pytorch_model_some_layers](./use_pytorch_model_some_layers) | PyTorch + torchvision | PyTorch 模型部分层使用与中间层输出查看 |
 | [user_decide_tools_use](./user_decide_tools_use) | FastAPI + OpenAI + WebSocket | AI Agent 系统，支持用户确认机制（Human-in-the-Loop） |
 | [user_join_running_task](./user_join_running_task) | Python + threading + asyncio | 运行过程中的线程和协程，实现中间人工参与 |
 
@@ -99,7 +101,59 @@ npm run dev
 
 ---
 
-### 2. dispatch_center_asyncio - 异步任务调度中心
+### 2. agent_eval - AI Agent 评估系统
+
+**项目路径**: [./agent_eval](./agent_eval)
+
+#### 技术栈
+- **Python** - 编程语言
+- **装饰器** - 零代码侵入式集成
+- **SQLite/PostgreSQL** - 数据存储
+- **ContextVars** - 并发执行跟踪
+- **Pydantic** - 数据验证
+
+#### 功能特性
+- **零代码侵入**：通过装饰器集成，无需修改现有代码
+- **全面指标**：正确性、步骤比率、工具调用比率、解决率、延迟比率
+- **混合评分**：结合基于代码的检查与 LLM-as-Judge 评估
+- **多种存储后端**：支持 JSON、CSV、SQLite、PostgreSQL
+- **理想答案生成**：使用 LLM 生成预期执行路径
+- **详细报告**：单批次评估报告与对比分析
+- **框架无关**：支持 LangChain、AutoGen、LangGraph 或自定义框架
+- **并发执行**：基于 ContextVars 的跟踪支持并发和嵌套执行
+
+#### 项目结构
+
+```
+agent_eval/
+├── agent_eval/            # 核心包
+│   ├── core.py           # 核心评估器
+│   ├── decorators.py     # 装饰器
+│   ├── metrics.py        # 指标计算
+│   ├── models.py         # 数据模型
+│   ├── recorders.py      # 记录器
+│   ├── scorers.py        # 评分器
+│   ├── storages.py       # 存储后端
+│   └── tracker.py        # 跟踪器
+├── examples/             # 示例代码
+├── tests/                # 测试
+├── docs/                 # 文档
+└── README.md
+```
+
+#### 快速开始
+
+```bash
+cd agent_eval
+pip install -e .
+
+# 运行示例
+python examples/basic_usage.py
+```
+
+---
+
+### 3. dispatch_center_asyncio - 异步任务调度中心
 
 **项目路径**: [./dispatch_center_asyncio](./dispatch_center_asyncio)
 
@@ -130,7 +184,7 @@ python start.py
 
 ---
 
-### 3. dispatch_center_process - 多进程任务调度中心
+### 4. dispatch_center_process - 多进程任务调度中心
 
 **项目路径**: [./dispatch_center_process](./dispatch_center_process)
 
@@ -161,7 +215,7 @@ python start.py
 
 ---
 
-### 4. dispatch_center_thteading - 线程池任务调度中心
+### 5. dispatch_center_thteading - 线程池任务调度中心
 
 **项目路径**: [./dispatch_center_thteading](./dispatch_center_thteading)
 
@@ -192,7 +246,7 @@ python start.py
 
 ---
 
-### 5. fastapi_SseAndStreamable - SSE 和 Streamable HTTP 对比测试
+### 6. fastapi_SseAndStreamable - SSE 和 Streamable HTTP 对比测试
 
 **项目路径**: [./fastapi_SseAndStreamable](./fastapi_SseAndStreamable)
 
@@ -244,7 +298,7 @@ uvicorn main:app --reload --port 8002
 
 ---
 
-### 6. simulation_claude_code_skill - Claude Code Skills 模拟实现
+### 7. simulation_claude_code_skill - Claude Code Skills 模拟实现
 
 **项目路径**: [./simulation_claude_code_skill](./simulation_claude_code_skill)
 
@@ -302,7 +356,7 @@ uvicorn main:app --reload
 
 ---
 
-### 7. testRuntimeRegister - 运行时动态模块加载
+### 8. testRuntimeRegister - 运行时动态模块加载
 
 **项目路径**: [./testRuntimeRegister](./testRuntimeRegister)
 
@@ -335,7 +389,7 @@ python main.py
 
 ---
 
-### 8. use_importlib_module - 动态导入模块学习
+### 9. use_importlib_module - 动态导入模块学习
 
 **项目路径**: [./use_importlib_module](./use_importlib_module)
 
@@ -366,7 +420,42 @@ python 02_from_filepath_load_module.py
 
 ---
 
-### 9. user_decide_tools_use - AI Agent 用户确认系统
+### 10. use_pytorch_model_some_layers - PyTorch 模型层操作
+
+**项目路径**: [./use_pytorch_model_some_layers](./use_pytorch_model_some_layers)
+
+#### 技术栈
+- **PyTorch** - 深度学习框架
+- **torchvision** - 预训练模型库
+- **torchsummary** - 模型摘要工具
+
+#### 功能特性
+演示 PyTorch 模型的部分层使用和中间层输出查看：
+
+- **获取模型前几层**：使用 `list(model.children())` 获取指定层
+- **使用 named_children**：通过名称访问子模块
+- **使用 named_parameters**：查看模型参数
+- **查看中间层输出**：使用 `torchsummary` 展示模型中间输入输出维度
+
+#### 示例文件
+
+- `01_use_some_layer.py` - 获取模型前几层
+- `02_use_name_children.py` - 使用 named_children 访问子模块
+- `03_use_name_parameters.py` - 查看模型参数
+- `04_show_model_middle_inputAndOutput.py` - 展示模型中间层输入输出维度
+
+#### 快速开始
+
+```bash
+cd use_pytorch_model_some_layers
+pip install torch torchvision torchsummary
+python 01_use_some_layer.py
+python 04_show_model_middle_inputAndOutput.py
+```
+
+---
+
+### 11. user_decide_tools_use - AI Agent 用户确认系统
 
 **项目路径**: [./user_decide_tools_use](./user_decide_tools_use)
 
@@ -407,7 +496,7 @@ python main.py
 
 ---
 
-### 10. user_join_running_task - 人工介入运行中的任务
+### 12. user_join_running_task - 人工介入运行中的任务
 
 **项目路径**: [./user_join_running_task](./user_join_running_task)
 

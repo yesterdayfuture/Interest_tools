@@ -1,0 +1,542 @@
+{
+  "executions": [],
+  "evaluations": [
+    {
+      "evaluation_id": "5c45e94a-7d04-496d-aa4c-69504b0cec8f",
+      "execution_id": "f09eedad-ccae-4ad8-8a89-a81c68f0742d",
+      "query": "What is the weather in New York?",
+      "overall_score": 0.8850000000000001,
+      "metric_scores": [
+        {
+          "metric_name": "Correctness",
+          "score": 0.7,
+          "weight": 0.3,
+          "details": {
+            "actual_output": "Answer to 'What is the weather in New York?': This is the result.",
+            "expected_output": "weather",
+            "match_type": "partial"
+          }
+        },
+        {
+          "metric_name": "StepRatio",
+          "score": 1.0,
+          "weight": 0.15,
+          "details": {
+            "actual_steps": 2,
+            "optimal_steps": 4,
+            "expected_steps": [
+              "step_0",
+              "step_1",
+              "step_2",
+              "step_3"
+            ]
+          }
+        },
+        {
+          "metric_name": "ToolCallRatio",
+          "score": 1.0,
+          "weight": 0.2,
+          "details": {
+            "actual_tool_calls": 1,
+            "optimal_tool_calls": 1,
+            "expected_sequence": null,
+            "actual_sequence": [
+              "search_tool"
+            ]
+          }
+        },
+        {
+          "metric_name": "SolveRate",
+          "score": 0.9,
+          "weight": 0.25,
+          "details": {
+            "execution_success": true,
+            "has_error": false,
+            "has_output": true,
+            "reason": "contains_expected"
+          }
+        },
+        {
+          "metric_name": "LatencyRatio",
+          "score": 1.0,
+          "weight": 0.1,
+          "details": {
+            "actual_duration_ms": 13.682126998901367,
+            "optimal_duration_ms": "unknown",
+            "message": "No optimal duration provided"
+          }
+        }
+      ],
+      "agent_execution": {
+        "execution_id": "f09eedad-ccae-4ad8-8a89-a81c68f0742d",
+        "query": "What is the weather in New York?",
+        "final_output": "Answer to 'What is the weather in New York?': This is the result.",
+        "steps": [
+          {
+            "step_number": 1,
+            "description": "Agent processes query",
+            "tool_calls": [
+              {
+                "tool_name": "search_tool",
+                "arguments": {
+                  "query": "What is the weather in New York?"
+                },
+                "result": {
+                  "data": "Results for What is the weather in New York?"
+                },
+                "timestamp": "2026-04-14 14:46:40.657194",
+                "duration_ms": 12.511014938354492
+              }
+            ],
+            "timestamp": "2026-04-14 14:46:40.644370",
+            "metadata": {
+              "query": "What is the weather in New York?",
+              "message_count": 0
+            }
+          },
+          {
+            "step_number": 2,
+            "description": "Generate final answer",
+            "tool_calls": [],
+            "timestamp": "2026-04-14 14:46:40.657531",
+            "metadata": {
+              "answer": "Answer to 'What is the weather in New York?': This is the result."
+            }
+          }
+        ],
+        "total_duration_ms": 13.682126998901367,
+        "success": true,
+        "error_message": null,
+        "metadata": {},
+        "created_at": "2026-04-14 14:46:40.643855"
+      },
+      "expected_result": {
+        "expected_output": "weather",
+        "expected_steps": [
+          "step_0",
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "expected_tool_calls": null,
+        "expected_tool_count": 1,
+        "expected_duration_ms": null,
+        "metadata": {}
+      },
+      "scorer_results": [
+        {
+          "scorer_name": "CodeBasedScorer",
+          "score": 0.75,
+          "passed": true,
+          "details": {
+            "checks_performed": [
+              {
+                "name": "tool_count",
+                "score": 1.0,
+                "passed": true
+              },
+              {
+                "name": "output_format",
+                "score": 0.5,
+                "passed": false
+              }
+            ],
+            "checks_passed": 1,
+            "checks_failed": 1
+          },
+          "error": null
+        }
+      ],
+      "created_at": "2026-04-14 14:46:40.658551",
+      "metadata": {}
+    },
+    {
+      "evaluation_id": "94ad2a3f-e745-4083-bec8-9b50858dbb7c",
+      "execution_id": "f60b2505-a484-4acb-814d-03691f71a4b9",
+      "query": "What is the weather in New York?",
+      "overall_score": 0.8850000000000001,
+      "metric_scores": [
+        {
+          "metric_name": "Correctness",
+          "score": 0.7,
+          "weight": 0.3,
+          "details": {
+            "actual_output": "Answer to 'What is the weather in New York?': This is the result.",
+            "expected_output": "weather",
+            "match_type": "partial"
+          }
+        },
+        {
+          "metric_name": "StepRatio",
+          "score": 1.0,
+          "weight": 0.15,
+          "details": {
+            "actual_steps": 2,
+            "optimal_steps": 4,
+            "expected_steps": [
+              "step_0",
+              "step_1",
+              "step_2",
+              "step_3"
+            ]
+          }
+        },
+        {
+          "metric_name": "ToolCallRatio",
+          "score": 1.0,
+          "weight": 0.2,
+          "details": {
+            "actual_tool_calls": 1,
+            "optimal_tool_calls": 1,
+            "expected_sequence": null,
+            "actual_sequence": [
+              "search_tool"
+            ]
+          }
+        },
+        {
+          "metric_name": "SolveRate",
+          "score": 0.9,
+          "weight": 0.25,
+          "details": {
+            "execution_success": true,
+            "has_error": false,
+            "has_output": true,
+            "reason": "contains_expected"
+          }
+        },
+        {
+          "metric_name": "LatencyRatio",
+          "score": 1.0,
+          "weight": 0.1,
+          "details": {
+            "actual_duration_ms": 13.364315032958984,
+            "optimal_duration_ms": "unknown",
+            "message": "No optimal duration provided"
+          }
+        }
+      ],
+      "agent_execution": {
+        "execution_id": "f60b2505-a484-4acb-814d-03691f71a4b9",
+        "query": "What is the weather in New York?",
+        "final_output": "Answer to 'What is the weather in New York?': This is the result.",
+        "steps": [
+          {
+            "step_number": 1,
+            "description": "Agent processes query",
+            "tool_calls": [
+              {
+                "tool_name": "search_tool",
+                "arguments": {
+                  "query": "What is the weather in New York?"
+                },
+                "result": {
+                  "data": "Results for What is the weather in New York?"
+                },
+                "timestamp": "2026-04-14 14:47:22.743893",
+                "duration_ms": 10.85519790649414
+              }
+            ],
+            "timestamp": "2026-04-14 14:47:22.732555",
+            "metadata": {
+              "query": "What is the weather in New York?",
+              "message_count": 0
+            }
+          },
+          {
+            "step_number": 2,
+            "description": "Generate final answer",
+            "tool_calls": [],
+            "timestamp": "2026-04-14 14:47:22.744645",
+            "metadata": {
+              "answer": "Answer to 'What is the weather in New York?': This is the result."
+            }
+          }
+        ],
+        "total_duration_ms": 13.364315032958984,
+        "success": true,
+        "error_message": null,
+        "metadata": {},
+        "created_at": "2026-04-14 14:47:22.731319"
+      },
+      "expected_result": {
+        "expected_output": "weather",
+        "expected_steps": [
+          "step_0",
+          "step_1",
+          "step_2",
+          "step_3"
+        ],
+        "expected_tool_calls": null,
+        "expected_tool_count": 1,
+        "expected_duration_ms": null,
+        "metadata": {}
+      },
+      "scorer_results": [
+        {
+          "scorer_name": "CodeBasedScorer",
+          "score": 0.75,
+          "passed": true,
+          "details": {
+            "checks_performed": [
+              {
+                "name": "tool_count",
+                "score": 1.0,
+                "passed": true
+              },
+              {
+                "name": "output_format",
+                "score": 0.5,
+                "passed": false
+              }
+            ],
+            "checks_passed": 1,
+            "checks_failed": 1
+          },
+          "error": null
+        }
+      ],
+      "created_at": "2026-04-14 14:47:22.746289",
+      "metadata": {}
+    },
+    {
+      "evaluation_id": "e0b34bff-1431-476d-902f-829bbfe6ef95",
+      "execution_id": "08bd9789-b704-451b-aa7d-03f79abf75a7",
+      "query": "Complex multi-step task",
+      "overall_score": 0.8850000000000001,
+      "metric_scores": [
+        {
+          "metric_name": "Correctness",
+          "score": 0.7,
+          "weight": 0.3,
+          "details": {
+            "actual_output": "Complex result for: Complex multi-step task",
+            "expected_output": "result",
+            "match_type": "partial"
+          }
+        },
+        {
+          "metric_name": "StepRatio",
+          "score": 1.0,
+          "weight": 0.15,
+          "details": {
+            "actual_steps": 4,
+            "optimal_steps": 5,
+            "expected_steps": [
+              "step_0",
+              "step_1",
+              "step_2",
+              "step_3",
+              "step_4"
+            ]
+          }
+        },
+        {
+          "metric_name": "ToolCallRatio",
+          "score": 1.0,
+          "weight": 0.2,
+          "details": {
+            "actual_tool_calls": 6,
+            "optimal_tool_calls": 6,
+            "expected_sequence": null,
+            "actual_sequence": [
+              "sub_tool_0",
+              "sub_tool_1",
+              "sub_tool_0",
+              "sub_tool_1",
+              "sub_tool_0",
+              "sub_tool_1"
+            ]
+          }
+        },
+        {
+          "metric_name": "SolveRate",
+          "score": 0.9,
+          "weight": 0.25,
+          "details": {
+            "execution_success": true,
+            "has_error": false,
+            "has_output": true,
+            "reason": "contains_expected"
+          }
+        },
+        {
+          "metric_name": "LatencyRatio",
+          "score": 1.0,
+          "weight": 0.1,
+          "details": {
+            "actual_duration_ms": 36.96489334106445,
+            "optimal_duration_ms": "unknown",
+            "message": "No optimal duration provided"
+          }
+        }
+      ],
+      "agent_execution": {
+        "execution_id": "08bd9789-b704-451b-aa7d-03f79abf75a7",
+        "query": "Complex multi-step task",
+        "final_output": "Complex result for: Complex multi-step task",
+        "steps": [
+          {
+            "step_number": 1,
+            "description": "Processing phase 1",
+            "tool_calls": [
+              {
+                "tool_name": "sub_tool_0",
+                "arguments": {
+                  "phase": 0,
+                  "subtask": 0
+                },
+                "result": {
+                  "status": "ok"
+                },
+                "timestamp": "2026-04-14 14:47:22.797937",
+                "duration_ms": 6.262063980102539
+              },
+              {
+                "tool_name": "sub_tool_1",
+                "arguments": {
+                  "phase": 0,
+                  "subtask": 1
+                },
+                "result": {
+                  "status": "ok"
+                },
+                "timestamp": "2026-04-14 14:47:22.804169",
+                "duration_ms": 6.199121475219727
+              }
+            ],
+            "timestamp": "2026-04-14 14:47:22.791640",
+            "metadata": {
+              "iteration": 0,
+              "complexity": "high"
+            }
+          },
+          {
+            "step_number": 2,
+            "description": "Processing phase 2",
+            "tool_calls": [
+              {
+                "tool_name": "sub_tool_0",
+                "arguments": {
+                  "phase": 1,
+                  "subtask": 0
+                },
+                "result": {
+                  "status": "ok"
+                },
+                "timestamp": "2026-04-14 14:47:22.810488",
+                "duration_ms": 6.273031234741211
+              },
+              {
+                "tool_name": "sub_tool_1",
+                "arguments": {
+                  "phase": 1,
+                  "subtask": 1
+                },
+                "result": {
+                  "status": "ok"
+                },
+                "timestamp": "2026-04-14 14:47:22.816592",
+                "duration_ms": 6.073713302612305
+              }
+            ],
+            "timestamp": "2026-04-14 14:47:22.804183",
+            "metadata": {
+              "iteration": 1,
+              "complexity": "high"
+            }
+          },
+          {
+            "step_number": 3,
+            "description": "Processing phase 3",
+            "tool_calls": [
+              {
+                "tool_name": "sub_tool_0",
+                "arguments": {
+                  "phase": 2,
+                  "subtask": 0
+                },
+                "result": {
+                  "status": "ok"
+                },
+                "timestamp": "2026-04-14 14:47:22.822013",
+                "duration_ms": 5.382776260375977
+              },
+              {
+                "tool_name": "sub_tool_1",
+                "arguments": {
+                  "phase": 2,
+                  "subtask": 1
+                },
+                "result": {
+                  "status": "ok"
+                },
+                "timestamp": "2026-04-14 14:47:22.828111",
+                "duration_ms": 6.0558319091796875
+              }
+            ],
+            "timestamp": "2026-04-14 14:47:22.816609",
+            "metadata": {
+              "iteration": 2,
+              "complexity": "high"
+            }
+          },
+          {
+            "step_number": 4,
+            "description": "Finalize",
+            "tool_calls": [],
+            "timestamp": "2026-04-14 14:47:22.828431",
+            "metadata": {
+              "output_length": 43
+            }
+          }
+        ],
+        "total_duration_ms": 36.96489334106445,
+        "success": true,
+        "error_message": null,
+        "metadata": {},
+        "created_at": "2026-04-14 14:47:22.791468"
+      },
+      "expected_result": {
+        "expected_output": "result",
+        "expected_steps": [
+          "step_0",
+          "step_1",
+          "step_2",
+          "step_3",
+          "step_4"
+        ],
+        "expected_tool_calls": null,
+        "expected_tool_count": 6,
+        "expected_duration_ms": null,
+        "metadata": {}
+      },
+      "scorer_results": [
+        {
+          "scorer_name": "CodeBasedScorer",
+          "score": 0.7266666666666667,
+          "passed": true,
+          "details": {
+            "checks_performed": [
+              {
+                "name": "tool_count",
+                "score": 1.0,
+                "passed": true
+              },
+              {
+                "name": "output_format",
+                "score": 0.4533333333333333,
+                "passed": false
+              }
+            ],
+            "checks_passed": 1,
+            "checks_failed": 1
+          },
+          "error": null
+        }
+      ],
+      "created_at": "2026-04-14 14:47:22.828905",
+      "metadata": {}
+    }
+  ]
+}

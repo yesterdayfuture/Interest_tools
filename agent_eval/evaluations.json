@@ -1,0 +1,163 @@
+{
+  "executions": [],
+  "evaluations": [
+    {
+      "evaluation_id": "25814226-f971-4981-ba27-df984eca65ba",
+      "execution_id": "98096f44-a16a-472b-b52c-b9cb3eef664f",
+      "query": "What is the capital of France?",
+      "overall_score": 0.8300000000000002,
+      "metric_scores": [
+        {
+          "metric_name": "Correctness",
+          "score": 0.5,
+          "weight": 0.3,
+          "details": {
+            "actual_output": "The capital of France is Paris.",
+            "expected_output": "Paris",
+            "match_type": "partial"
+          }
+        },
+        {
+          "metric_name": "StepRatio",
+          "score": 1.0,
+          "weight": 0.2,
+          "details": {
+            "actual_steps": 2,
+            "optimal_steps": 3,
+            "expected_steps": [
+              "理解查询",
+              "检索信息",
+              "生成回答"
+            ]
+          }
+        },
+        {
+          "metric_name": "ToolCallRatio",
+          "score": 1.0,
+          "weight": 0.2,
+          "details": {
+            "actual_tool_calls": 1,
+            "optimal_tool_calls": 1,
+            "expected_sequence": null,
+            "actual_sequence": [
+              "search"
+            ]
+          }
+        },
+        {
+          "metric_name": "SolveRate",
+          "score": 0.9,
+          "weight": 0.2,
+          "details": {
+            "execution_success": true,
+            "has_error": false,
+            "has_output": true,
+            "reason": "contains_expected"
+          }
+        },
+        {
+          "metric_name": "LatencyRatio",
+          "score": 1.0,
+          "weight": 0.1,
+          "details": {
+            "actual_duration_ms": 0.018835067749023438,
+            "optimal_duration_ms": "unknown",
+            "message": "No optimal duration provided"
+          }
+        }
+      ],
+      "agent_execution": {
+        "execution_id": "98096f44-a16a-472b-b52c-b9cb3eef664f",
+        "query": "What is the capital of France?",
+        "steps_summary": "第1步执行理解查询\n第2步执行生成回答",
+        "steps_detail": [
+          {
+            "step": 1,
+            "description": "理解查询",
+            "input": "What is the capital of France?",
+            "output": null,
+            "time": null,
+            "success": true,
+            "err_msg": null,
+            "timestamp": "2026-04-14 15:20:34.397134"
+          },
+          {
+            "step": 2,
+            "description": "生成回答",
+            "input": null,
+            "output": null,
+            "time": 0.014066696166992188,
+            "success": true,
+            "err_msg": null,
+            "timestamp": "2026-04-14 15:20:34.397145"
+          }
+        ],
+        "tool_call_count": 1,
+        "tool_calls_detail": [
+          {
+            "name": "search",
+            "input": {
+              "query": "capital of France"
+            },
+            "output": {
+              "answer": "Paris"
+            },
+            "time": 30.0,
+            "success": true,
+            "err_msg": null,
+            "timestamp": "2026-04-14 15:20:34.397142"
+          }
+        ],
+        "step_count": 2,
+        "final_output": "The capital of France is Paris.",
+        "success": true,
+        "has_error": false,
+        "error_message": null,
+        "total_duration_ms": 0.018835067749023438,
+        "start_time": "2026-04-14 15:20:34.397116",
+        "end_time": "2026-04-14 15:20:34.397149",
+        "metadata": {},
+        "created_at": "2026-04-14 15:20:34.397127"
+      },
+      "expected_result": {
+        "expected_output": "Paris",
+        "expected_steps": [
+          "理解查询",
+          "检索信息",
+          "生成回答"
+        ],
+        "expected_tool_calls": null,
+        "expected_tool_count": 1,
+        "expected_step_count": null,
+        "expected_duration_ms": null,
+        "metadata": {}
+      },
+      "scorer_results": [
+        {
+          "scorer_name": "CodeBasedScorer",
+          "score": 0.6866666666666666,
+          "passed": true,
+          "details": {
+            "checks_performed": [
+              {
+                "name": "tool_count",
+                "score": 1.0,
+                "passed": true
+              },
+              {
+                "name": "output_format",
+                "score": 0.37333333333333335,
+                "passed": false
+              }
+            ],
+            "checks_passed": 1,
+            "checks_failed": 1
+          },
+          "error": null
+        }
+      ],
+      "created_at": "2026-04-14 15:20:34.397859",
+      "metadata": {}
+    }
+  ]
+}

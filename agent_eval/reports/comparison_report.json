@@ -1,0 +1,164 @@
+{
+  "report_type": "comparison",
+  "generated_at": "2026-04-14T15:49:31.181026",
+  "query": "计算 100 + 200",
+  "comparison": {
+    "expected": {
+      "output": "100 + 200 = 300",
+      "step_count": 3,
+      "tool_call_count": 1,
+      "steps": [
+        {
+          "step": 1,
+          "description": "解析用户输入",
+          "input": null,
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180397"
+        },
+        {
+          "step": 2,
+          "description": "调用计算器",
+          "input": null,
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180439"
+        },
+        {
+          "step": 3,
+          "description": "返回结果",
+          "input": null,
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180443"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "calculator",
+          "input": {},
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180448"
+        }
+      ],
+      "duration_ms": 500
+    },
+    "actual": {
+      "output": "100 + 200 = 300",
+      "step_count": 4,
+      "tool_call_count": 1,
+      "steps": [
+        {
+          "step": 1,
+          "description": "解析用户输入",
+          "input": null,
+          "output": null,
+          "time": 50.0,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180741"
+        },
+        {
+          "step": 2,
+          "description": "验证输入格式",
+          "input": null,
+          "output": null,
+          "time": 30.0,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180745"
+        },
+        {
+          "step": 3,
+          "description": "调用计算器",
+          "input": null,
+          "output": null,
+          "time": 150.0,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180747"
+        },
+        {
+          "step": 4,
+          "description": "格式化输出",
+          "input": null,
+          "output": null,
+          "time": 20.0,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180749"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "calculator",
+          "input": {},
+          "output": null,
+          "time": 150.0,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14T15:49:31.180751"
+        }
+      ],
+      "duration_ms": 650.0,
+      "success": true,
+      "has_error": false
+    },
+    "differences": {
+      "step_count_diff": 1,
+      "tool_call_count_diff": 0,
+      "duration_diff_ms": 150.0,
+      "output_similarity": 1.0
+    }
+  },
+  "evaluation": {
+    "overall_score": 0.85,
+    "metric_scores": [
+      {
+        "metric_name": "Correctness",
+        "score": 1.0,
+        "weight": 0.3,
+        "details": {}
+      },
+      {
+        "metric_name": "StepRatio",
+        "score": 0.75,
+        "weight": 0.2,
+        "details": {
+          "expected_steps": 3,
+          "actual_steps": 4
+        }
+      },
+      {
+        "metric_name": "ToolCallRatio",
+        "score": 1.0,
+        "weight": 0.2,
+        "details": {}
+      },
+      {
+        "metric_name": "SolveRate",
+        "score": 1.0,
+        "weight": 0.15,
+        "details": {}
+      },
+      {
+        "metric_name": "LatencyRatio",
+        "score": 0.77,
+        "weight": 0.15,
+        "details": {
+          "expected_ms": 500,
+          "actual_ms": 650
+        }
+      }
+    ]
+  }
+}

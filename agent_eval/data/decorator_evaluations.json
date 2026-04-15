@@ -1,0 +1,323 @@
+{
+  "executions": [
+    {
+      "execution_id": "3d792a06-b5ad-4e76-b401-009d25c5248c",
+      "query": "今天天气怎么样？",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 1,
+      "tool_calls_detail": [
+        {
+          "name": "weather_api",
+          "input": {
+            "query": "今天天气怎么样？"
+          },
+          "output": "今天天气晴朗，25°C",
+          "time": 55.04202842712402,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.317630"
+        }
+      ],
+      "step_count": 0,
+      "final_output": "今天天气晴朗，25°C",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 158.92291069030762,
+      "start_time": "2026-04-14T15:58:00.158799",
+      "end_time": "2026-04-14T15:58:00.317694",
+      "created_at": "2026-04-14T15:58:00.159107",
+      "metadata": {
+        "function": "my_chatbot"
+      }
+    },
+    {
+      "execution_id": "7d0280e4-fb2d-41f3-bc0b-4c3be8bce153",
+      "query": "Python 编程技巧",
+      "steps_summary": "第1步执行解析查询\n第2步执行检索信息\n第3步执行生成回答",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "解析查询",
+          "input": {
+            "query": "Python 编程技巧"
+          },
+          "output": {
+            "intent": "search",
+            "keywords": [
+              "Python",
+              "编程技巧"
+            ]
+          },
+          "time": 20.288944244384766,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.339203"
+        },
+        {
+          "step": 2,
+          "description": "检索信息",
+          "input": {
+            "parsed": {
+              "intent": "search",
+              "keywords": [
+                "Python",
+                "编程技巧"
+              ]
+            }
+          },
+          "output": [
+            "信息1",
+            "信息2",
+            "信息3"
+          ],
+          "time": 51.2700080871582,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.390612"
+        },
+        {
+          "step": 3,
+          "description": "生成回答",
+          "input": {
+            "info": [
+              "信息1",
+              "信息2",
+              "信息3"
+            ]
+          },
+          "output": "基于检索到的信息，这是最终回答。",
+          "time": 35.025835037231445,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.425749"
+        }
+      ],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 3,
+      "final_output": "基于检索到的信息，这是最终回答。",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 107.2239875793457,
+      "start_time": "2026-04-14T15:58:00.318586",
+      "end_time": "2026-04-14T15:58:00.425779",
+      "created_at": "2026-04-14T15:58:00.318598",
+      "metadata": {
+        "function": "complex_agent"
+      }
+    },
+    {
+      "execution_id": "078e570b-8be7-4a83-b70e-1ca66364c4ff",
+      "query": "机器学习教程",
+      "steps_summary": "第1步执行理解查询\n第2步执行处理结果",
+      "steps_detail": [
+        {
+          "step": 1,
+          "description": "理解查询",
+          "input": "机器学习教程",
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.426660"
+        },
+        {
+          "step": 2,
+          "description": "处理结果",
+          "input": null,
+          "output": null,
+          "time": null,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.477599"
+        }
+      ],
+      "tool_call_count": 1,
+      "tool_calls_detail": [
+        {
+          "name": "search",
+          "input": {
+            "q": "机器学习教程"
+          },
+          "output": {
+            "results": [
+              "result1",
+              "result2"
+            ]
+          },
+          "time": 50.0,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.477551"
+        }
+      ],
+      "step_count": 2,
+      "final_output": "关于 '机器学习教程' 的搜索结果",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 51.03778839111328,
+      "start_time": "2026-04-14T15:58:00.426629",
+      "end_time": "2026-04-14T15:58:00.477627",
+      "created_at": "2026-04-14T15:58:00.426649",
+      "metadata": {}
+    },
+    {
+      "execution_id": "3224df31-cfd3-4523-b6c5-938d00d4a0a1",
+      "query": "什么是人工智能？",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 0,
+      "final_output": "这是对 '什么是人工智能？' 的回答",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 104.67672348022461,
+      "start_time": "2026-04-14T15:58:00.478746",
+      "end_time": "2026-04-14T15:58:00.583377",
+      "created_at": "2026-04-14T15:58:00.478759",
+      "metadata": {
+        "function": "my_chatbot"
+      }
+    },
+    {
+      "execution_id": "00c3876c-ba07-4f60-b757-667ec014e7df",
+      "query": "Python 异步编程",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 0,
+      "final_output": "这是对 'Python 异步编程' 的回答",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 100.93998908996582,
+      "start_time": "2026-04-14T15:58:00.584124",
+      "end_time": "2026-04-14T15:58:00.685026",
+      "created_at": "2026-04-14T15:58:00.584146",
+      "metadata": {
+        "function": "my_chatbot"
+      }
+    },
+    {
+      "execution_id": "6d2bd77d-4850-4554-a923-fd3eaefd21cf",
+      "query": "深度学习基础",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 0,
+      "final_output": "这是对 '深度学习基础' 的回答",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 105.09991645812988,
+      "start_time": "2026-04-14T15:58:00.685765",
+      "end_time": "2026-04-14T15:58:00.790834",
+      "created_at": "2026-04-14T15:58:00.685781",
+      "metadata": {
+        "function": "my_chatbot"
+      }
+    },
+    {
+      "execution_id": "15f69a5d-edf8-45e3-8294-5b57d488fba6",
+      "query": "自然语言处理",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 0,
+      "final_output": "这是对 '自然语言处理' 的回答",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 104.70914840698242,
+      "start_time": "2026-04-14T15:58:00.791703",
+      "end_time": "2026-04-14T15:58:00.896376",
+      "created_at": "2026-04-14T15:58:00.791725",
+      "metadata": {
+        "function": "my_chatbot"
+      }
+    },
+    {
+      "execution_id": "a2d3d522-0c69-4b9b-a3a6-d9e8839d84f7",
+      "query": "计算 50 + 50",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 1,
+      "tool_calls_detail": [
+        {
+          "name": "calculate",
+          "input": {
+            "self": "<__main__.MyAgent object at 0x10694bdc0>",
+            "expression": "计算 50 + 50"
+          },
+          "output": "计算结果: 100",
+          "time": 32.61709213256836,
+          "success": true,
+          "err_msg": null,
+          "timestamp": "2026-04-14 15:58:00.930575"
+        }
+      ],
+      "step_count": 0,
+      "final_output": "计算结果: 100",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 32.82022476196289,
+      "start_time": "2026-04-14T15:58:00.897816",
+      "end_time": "2026-04-14T15:58:00.930605",
+      "created_at": "2026-04-14T15:58:00.897831",
+      "metadata": {
+        "function": "run"
+      }
+    },
+    {
+      "execution_id": "9bd0b814-a8d2-4662-b601-7e2632ae6d34",
+      "query": "触发 error",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 0,
+      "final_output": null,
+      "success": false,
+      "has_error": true,
+      "error_message": "模拟错误!",
+      "total_duration_ms": 0.4000663757324219,
+      "start_time": "2026-04-14T15:58:00.932351",
+      "end_time": "2026-04-14T15:58:00.932717",
+      "created_at": "2026-04-14T15:58:00.932369",
+      "metadata": {
+        "function": "error_prone_agent"
+      }
+    },
+    {
+      "execution_id": "b1ce148c-5ae9-431c-9de2-71c3e1c23ab2",
+      "query": "正常查询",
+      "steps_summary": "",
+      "steps_detail": [],
+      "tool_call_count": 0,
+      "tool_calls_detail": [],
+      "step_count": 0,
+      "final_output": "成功处理: 正常查询",
+      "success": true,
+      "has_error": false,
+      "error_message": null,
+      "total_duration_ms": 0.03814697265625,
+      "start_time": "2026-04-14T15:58:00.933719",
+      "end_time": "2026-04-14T15:58:00.933738",
+      "created_at": "2026-04-14T15:58:00.933728",
+      "metadata": {
+        "function": "error_prone_agent"
+      }
+    }
+  ],
+  "evaluations": []
+}
