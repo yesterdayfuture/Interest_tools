@@ -1,7 +1,8 @@
 from pathlib import Path
+from math import ceil
 
 
-def test_add(a: float, b: float):
+def test_add(a: float, b: float = 0.0):
     return a + b
 
 
