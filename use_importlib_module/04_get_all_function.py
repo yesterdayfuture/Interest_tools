@@ -3,6 +3,7 @@
 """
 import importlib
 import inspect
+from fastapi.security import OAuth2, OAuth2PasswordRequestForm
 
 # 获取模块中所有函数
 def list_module_functions(module_name):

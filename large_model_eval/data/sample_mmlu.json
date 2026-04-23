@@ -1,0 +1,72 @@
+[
+  {
+    "question": "下列哪位哲学家提出了'我思故我在'的观点？",
+    "choices": ["苏格拉底", "柏拉图", "笛卡尔", "康德"],
+    "answer": "C",
+    "category": "philosophy",
+    "explanation": "笛卡尔是法国哲学家，提出了'我思故我在'（Cogito, ergo sum）这一著名命题。"
+  },
+  {
+    "question": "水的化学式是什么？",
+    "choices": ["CO2", "H2O", "NaCl", "O2"],
+    "answer": "B",
+    "category": "chemistry",
+    "explanation": "水的化学式是H2O，由两个氢原子和一个氧原子组成。"
+  },
+  {
+    "question": "第二次世界大战结束于哪一年？",
+    "choices": ["1943", "1944", "1945", "1946"],
+    "answer": "C",
+    "category": "history",
+    "explanation": "第二次世界大战于1945年结束。"
+  },
+  {
+    "question": "一个三角形的内角和是多少度？",
+    "choices": ["90°", "180°", "270°", "360°"],
+    "answer": "B",
+    "category": "mathematics",
+    "explanation": "三角形的内角和恒等于180度。"
+  },
+  {
+    "question": "Python中用于定义函数的关键字是什么？",
+    "choices": ["func", "def", "function", "define"],
+    "answer": "B",
+    "category": "computer_science",
+    "explanation": "Python使用def关键字来定义函数。"
+  },
+  {
+    "question": "太阳系中最大的行星是？",
+    "choices": ["地球", "火星", "木星", "土星"],
+    "answer": "C",
+    "category": "astronomy",
+    "explanation": "木星是太阳系中最大的行星。"
+  },
+  {
+    "question": "DNA的双螺旋结构是由谁发现的？",
+    "choices": ["达尔文", "孟德尔", "沃森和克里克", "爱因斯坦"],
+    "answer": "C",
+    "category": "biology",
+    "explanation": "沃森和克里克于1953年发现了DNA的双螺旋结构。"
+  },
+  {
+    "question": "《红楼梦》的作者是谁？",
+    "choices": ["曹雪芹", "罗贯中", "施耐庵", "吴承恩"],
+    "answer": "A",
+    "category": "literature",
+    "explanation": "《红楼梦》的作者是曹雪芹。"
+  },
+  {
+    "question": "电流的单位是什么？",
+    "choices": ["伏特", "安培", "欧姆", "瓦特"],
+    "answer": "B",
+    "category": "physics",
+    "explanation": "电流的单位是安培（A）。"
+  },
+  {
+    "question": "世界上面积最大的大洋是？",
+    "choices": ["大西洋", "印度洋", "太平洋", "北冰洋"],
+    "answer": "C",
+    "category": "geography",
+    "explanation": "太平洋是世界上面积最大的大洋。"
+  }
+]

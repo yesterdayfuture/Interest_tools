@@ -2,6 +2,9 @@
 # 根目录 .gitignore - 递归忽略所有子项目中的文件
 # ============================================
 
+# === 暂时忽略 keyframes_extract 项目 ===
+keyframes_extract/
+
 # === 环境变量文件 ===
 **/.env
 **/.env.local
@@ -129,6 +132,26 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+
+# === 机器学习模型和大型文件 ===
+**/*.pth
+**/*.h5
+**/*.hdf5
+**/*.ckpt
+**/*.onnx
+**/*.pb
+**/*.tflite
+**/*.weights
+**/*.pt
+
+# === 数据集和临时文件 ===
+**/data/*.zip
+**/data/*.tar.gz
+**/data/*.tgz
+**/raw/
+**/videos/*.mp4
+**/videos/*.webm
+**/checkpoints/*.pth
 
 # === 其他 ===
 **/.gitignore
